@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(90deg,rgb(1, 238, 255) 50%, rgb(38, 4, 226));
+        }
+        .wadah{
+            height: 100px;
+            width: 500px;
+            background: linear-gradient(90deg,rgb(38, 4, 226), rgb(1, 238, 255));
+            border-radius: 20px;
+            /* border: 2px solid rgb(10, 0, 95); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .wadah:hover{
+            background: linear-gradient(90deg, rgb(1, 238, 255) 50%, rgb(38, 4, 226));
+            color: aliceblue;
+            transform: scale(1.09);
+            transition: calc(1s);
+            cursor: pointer;
+            
+            
+        }
+        #clock{
+            font-weight: bold;
+            font-size: 5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="wadah">
+        <div id="clock"></div>
+    </div>
+    <script>
+        setInterval(() => {
+            let date = new Date()
+            let = clock = document.getElementById('clock')
+            clock.innerHTML =
+                date.getHours()+":"+
+                date.getMinutes()+":"+
+                date.getSeconds()
+        }, 1000);
+    </script>
+
+</body>
+</html>
