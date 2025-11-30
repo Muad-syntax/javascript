@@ -1,50 +1,32 @@
-// let umur = prompt('Umur lu berapa?')
-// alert('Umur gw ' + umur)
+// alert('Selamat Datang di Belajar Javascript');
+// console.log('Selamat Datang di Belajar Javascript');
 
-// let nama = 'Muad'
-// let umur = 21
-// let tinggiBadan = 145.5
-// let beratBadan
-// let pacar = null
-
-// beratBadan = 45
-
-// if (pacar == null){
-//     pacar = 'sama sekali'
-// } else {
-//     pacar = ' TAPI BOONG'
-// }
-
-// let saldoAwal = 100000
-// let pengeluaran = 45000
-// const saldoGw = saldoAwal - pengeluaran
-
-// switch(pacar){
-//     case 1:
-//         pacar = 'eh ada ketang ada 1'
-//         break
-//     case 3:
-//         pacar = ', TAPI BOONG, 3 PACAR GW EMBAT'
-//         break
-//     default:
-//         pacar = 'sama sekali'
-//         break
-// }
-// alert(
-//     `nama saya ${nama} saya berumur ${umur} tahun, tinggi saya ${tinggiBadan} cm, lalu berat saya ${beratBadan} kg, saya juga tidak punya pacar ${pacar}`
-// )
-// alert(
-//     `Awalnya gw punya saldo Rp.${saldoAwal}, terus gw di palak Rp.${pengeluaran} otomatis saldo gw jadi Rp.${saldoGw}`
-// )
-
-let namaBarang = ['pulpen', 'pensil', 'penghapus']
-
-// namaBarang.push('stabilo', 'tipeX', 'jangkar')
-// namaBarang.shift() //menghilangkan index pertama 'pulpen'
-// namaBarang.pop() //mengilangkan index terakhir 'jangkar'
-// alert(namaBarang)
-
-//for loop
-for (let i = 0 ; i < namaBarang.length; i++) {
-    console.log(namaBarang[i])
-}
+alert('Selamat Datang di Belajar Javascript');
+console.log('Selamat Datang di Belajar Javascript');
+var element = document.getElementById('js');
+element.innerHTML = 'Selamat Datang  di Belajar Javascript ';
+element.style.color = 'blue';
+element.style.textAlign = 'center'; 
+element.style.fontFamily = 'Arial, sans-serif';
+element.style.marginTop = '20px';
+element.style.fontSize = '24px';
+element.style.fontWeight = 'bold';
+element.style.textDecoration = 'none';
+element.style.textTransform = 'uppercase';
+element.style.letterSpacing = '2px';
+element.style.backgroundColor = 'lightgray';
+element.style.padding = '10px';
+element.style.borderRadius = '5px';
+element.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+element.style.width = 'fit-content';
+element.style.margin = '20px auto';
+element.style.transition = 'all 0.3s ease';
+element.addEventListener('mouseover', function() {
+    element.style.color = 'green';
+    element.style.backgroundColor = 'lightyellow';
+});
+element.addEventListener('mouseout', function() {
+    element.style.color = 'blue';
+    element.style.backgroundColor = 'lightgray';
+}); 
+console.log('Element styled successfully!');
