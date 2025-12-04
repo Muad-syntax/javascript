@@ -9,7 +9,10 @@ var ketik = prompt('coba deh ketik ok di sini');
 alert('klik dong ' + ketik + ' nya, biar bisa masuk ke halaman');
 var nama = prompt('eh sebentar, kamu siapa ya?');
 alert('oh jadi kamu ' + nama + ', selamat datang di halaman ini!');
-alert('nungugin yaaa!!!! \u{1F602}');
+alert('nunguin yaaa!!!! \u{1F602}');
+for(var i = 0; i < 3; i++){
+    alert('UHHUY!!! \u{1F602}');    
+}
 var yakin = confirm('beneran nih mau masuk??');
 if (yakin === true) {
     alert('yah kamu masuk juga akhirnya \u{1F602}');
