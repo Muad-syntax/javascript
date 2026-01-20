@@ -6,17 +6,12 @@ let jumlah_nilai = nilai_mtk + nilai_inggris + nilai_pemrograman
 let nilai_rataRata = jumlah_nilai / 3
 
 console.log(
-            7`Nama: ${nama_siswa} 
-            nilai mtk: ${nilai_mtk} 
-            nilai inggris: ${nilai_inggris}
-            nilai pemrograman: ${nilai_pemrograman} 
-            jumlah nilai: ${jumlah_nilai} 
-            nilai rata-rata: ${nilai_rataRata}`
-        )
+    `Nama: ${nama_siswa} nilai mtk: ${nilai_mtk} nilai inggris: ${nilai_inggris} nilai pemrograman: ${nilai_pemrograman} jumlah nilai: ${jumlah_nilai} nilai rata-rata: ${nilai_rataRata}`
+)
 
-if(nilai_rataRata > 75){
+if (nilai_rataRata >= 75) {
     console.log(` Nilai rata - rata: ${nilai_rataRata}. Anda Lulus `)
-} else if(nilai_rataRata < 75){
+} else {
     console.log(` Nilai rata - rata: ${nilai_rataRata}. Anda Tidak Lulus `)
 }
 
