@@ -13,9 +13,8 @@
 
         let tinggi = tinggi_badan / 100;
         let BMI = berat_badan / (tinggi **2);
-
         if (BMI < 18.5) {
-            alert(`BMI: ${BMI} \nBerat badan kurang proporsional`)
+            alert("BMI: " + BMI.toFixed(2) + "\nBerat badan kurang proporsional \u{1F602}")
         } 
         if (BMI >= 18.5 && BMI <= 22.9) {
             alert(`BMI: ${BMI} \nBerat badan ideal`)
