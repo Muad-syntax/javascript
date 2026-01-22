@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Berat Badan</h1>
+    <script>
+        let tinggi_badan = parseInt(prompt("Masukan Tinggi Badan Anda"));
+        let berat_badan = parseInt(prompt("Masukan Berat Badan Anda"));
+
+        let tinggi = tinggi_badan / 100;
+        let BMI = berat_badan / (tinggi **2);
+
+        if (BMI < 18.5) {
+            alert(`BMI: ${BMI} \nBerat badan kurang proporsional`)
+        } 
+        if (BMI >= 18.5 && BMI <= 22.9) {
+            alert(`BMI: ${BMI} \nBerat badan ideal`)
+        } 
+        if (BMI >= 23 && BMI <= 29.9) {
+            alert(`BMI: ${BMI} \nBerat badan berlebihan`)
+        }
+        if (BMI > 30) {
+            alert(`BMI: ${BMI} \nObesitas`)
+        }
+
+    </script>
+</body>
+</html>
