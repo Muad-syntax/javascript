@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if Bersasang</title>
+</head>
+<body>
+    <script>
+        var nilai = parseInt(prompt("Masukan Nilai: "));
+        var kkm = 75;
+        var PREDIKAT = '';
+
+        if (nilai > 75) {
+            alert("LULUS")
+            if (nilai < 80){
+                PREDIKAT = 'B';
+                alert(`Nilai Anda ${PREDIKAT}`)
+            }
+        } else {
+            alert("REMEDIAL");
+            if(nilai > 60){
+                PREDIKAT = 'C';
+                alert(`Nilai Anda ${PREDIKAT}`)
+            }
+        }
+    </script>
+</body>
+</html>
