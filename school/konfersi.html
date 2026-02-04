@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>konfersi</title>
+    <link rel="stylesheet" href="konfersi.css">
 </head>
+
 <body>
+    <div class="card">
+        <label for="pilihanMenu">Pilih Kenversi:</label>
+        <select id="pilihanMenu">
+            <option value="1">1. Dolar ke Rupiah</option>
+            <option value="2">2. Rupiah ke Dolar</option>
+            <option value="3">3. Emas (gram) ke Rupiah</option>
+        </select>
+        <br><br>
+
+        <label for="inputNominal">Masukan Nominal/Jumlah: </label>
+        <input type="number" id="inputNominal" placeholder="0">
+        <br><br>
+
+        <button onclick="hitungKonversi()">Hitung</button>
+    </div>
     <h1 id="canvas"></h1>
+
+
     <script src="konfersi.js"></script>
 </body>
+
 </html>
