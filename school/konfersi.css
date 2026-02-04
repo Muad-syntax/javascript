@@ -1,23 +1,22 @@
-body{
+body {
     background-color: rgb(0, 179, 155);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.card{
+.card {
     border: 2px solid;
     border-radius: 20px;
     padding: 25px;
     background-color: antiquewhite;
     box-shadow: 0 4px 8px rgba(0, 255, 242, 0.959);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
 }
 
-button{
+button {
     padding: 10px;
     width: 120px;
     border: none;
@@ -27,8 +26,39 @@ button{
     font-weight: bold;
 }
 
-button:hover{
+button:hover {
     background: #00a1b6;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+#label,i:hover{
+    cursor: pointer;
+}
+.dropdown{
+    position: relative;
+}
+
+.dropdown-content{
+    border: none;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+    cursor: pointer;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+hr{
+    width: 100px;
 }
