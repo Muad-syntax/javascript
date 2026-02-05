@@ -1,7 +1,7 @@
 let nama_siswa = "Ahmad Maliki"
 let nilai_mtk = 70
-let nilai_inggris = 70
-let nilai_pemrograman = 70
+var nilai_inggris = 70
+const nilai_pemrograman = 70
 let jumlah_nilai = nilai_mtk + nilai_inggris + nilai_pemrograman
 let nilai_rataRata = jumlah_nilai / 3
 
