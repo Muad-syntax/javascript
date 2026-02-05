@@ -23,31 +23,31 @@ if (pilihan == '1') {
     if (makanan == '1') {
         var beli = prompt(makanan1 + ", Pesan Berapa?")
         var hasil = beli * nasgor
-        document.writeln(`Produk yang dipilih: ${makanan1}. <br>Harga satuan: ${nasgor}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${makanan1}. <br>Harga satuan: ${nasgor}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         // kondisi diskon
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
     } else if (makanan == '2') {
         var beli = prompt(makanan2 + ", Pesan Berapa?")
         var hasil = beli * mieAyam
-        document.writeln(`Produk yang dipilih: ${makanan2}. <br>Harga satuan: ${mieAyam}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${makanan2}. <br>Harga satuan: ${mieAyam}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
 
     } else if (makanan == '3') {
         var beli = prompt(makanan3 + ", Pesan Berapa?")
         var hasil = beli * baso
-        document.writeln(`Produk yang dipilih: ${makanan3}. <br>Harga satuan: ${baso}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${makanan3}. <br>Harga satuan: ${baso}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
 
     }
@@ -59,30 +59,31 @@ else if (pilihan == '2') {
     if (minuman == '1') {
         var beli = prompt(minuman1 + ", Pesan Berapa?")
         var hasil = beli * esTeh
-        document.writeln(`Produk yang dipilih: ${minuman1}. <br>Harga satuan: ${esTeh}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${minuman1}. <br>Harga satuan: ${esTeh}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
     } else if (minuman == '2') {
         var beli = prompt(minuman2 + ", Pesan Berapa?")
         var hasil = beli * esJeruk
-        document.writeln(`Produk yang dipilih: ${minuman2}. <br>Harga satuan: ${esJeruk}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${minuman2}. <br>Harga satuan: ${esJeruk}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
 
     } else if (minuman == '3') {
         var beli = prompt(minuman3 + ", Pesan Berapa?")
         var hasil = beli * kopi
-        document.writeln(`Produk yang dipilih: ${minuman3}. <br>Harga satuan: ${kopi}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil} <br>Terima kasih telah berbelanja!`)
+        document.writeln(`Produk yang dipilih: ${minuman3}. <br>Harga satuan: ${kopi}. <br>Jumlah (Kuantitas): ${beli}. <br>Total pembayaran: ${hasil}`)
         if (beli >= 10) {
             var diskon = 10000
             var dptDiskon = hasil - diskon;
-            document.writeln(`Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
+            document.writeln(`<br>Selamat Anda mendapatkan diskon Rp.${diskon} karena pembelian lebih dari 10. <br>Total pembayaran: ${dptDiskon}`)
         }
     }
 }
+document.writeln("<br>Terimakasih sudah berbelanja!!")
