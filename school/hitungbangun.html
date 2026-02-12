@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Bangun Datar</title>
+</head>
+
+<body>
+    <script>
+        var pilih = prompt('Pilih Bangun Datar: \n1.Lingkaran \n2.Segitiga \n3.Persegi \n4.Persegi Panjang');
+        document.writeln("<h1>Hasil Perhitungan</h1><hr>")
+
+        var bangunDatar1 = 'lingkaran';
+        var bangunDatar2 = 'segitiga';
+        var bangunDatar3 = 'persegi';
+        var bangunDatar4 = 'persegi panjang';
+
+        if (pilih == '1') {
+            var hitung = prompt('Pilih yang ingin dihitung: \n1.Keliling \n2.Luas');
+            if (hitung == '1') {
+                var r = prompt('Masukkan jari-jari (r):');
+                var jawaban = 2 * 3.14 * r;
+                document.writeln(`<br>Bangun Datar: ${bangunDatar1} <br>Jenis Hitung: Keliling <br>Hasil: ${jawaban}`);
+    } else if (hitung == '2') {
+        var r = prompt('Masukkan jari-jari (r):');
+                    var jawaban = 3.14 * r ** 2;
+                    document.writeln(`<br>Bangun Datar: ${bangunDatar1} <br>Jenis Hitung: Luas <br>Hasil: ${jawaban}`)
+    }
+} else if (pilih == '2') {
+    var hitung = prompt('Pilih yang ingin dihitung: \n1.Luas \n2.Keliling');
+                        if (hitung == '1') {
+        var a = prompt('Masukkan alas(a):');
+                        var t = prompt('Masukan tinggi(t):');
+                        var jawaban = 1 / 2 * a * t;
+                        document.writeln(`<br>Bangun Datar: ${bangunDatar2} <br>Jenis Hitung: Luas <br>Hasil: ${jawaban}`);
+    } else if (hitung == '2') {
+        var s1 = parseInt(prompt('Masukan sisi (s1):'));
+                            var s2 = parseInt(prompt('Masukan sisi (s2):'));
+                            var s3 = parseInt(prompt('Masukan sisi (s3):'));
+                            var jawaban = s1 + s2 + s3;
+                            document.writeln(`<br>Bangun Datar: ${bangunDatar2} <br>Jenis Hitung: Keliling <br>Hasil: ${jawaban}`)
+    }
+} else if (pilih == '3') {
+    var hitung = prompt('Pilih yang ingin dihitung: \n1.Keliling \n2.Luas');
+                                if (hitung == '1') {
+        var s = prompt('Masukkan sisi (s):');
+                                var jawaban = 4 * s
+                                document.writeln(`<br>Bangun Datar: ${bangunDatar3} <br>Jenis Hitung: Keliling <br>Hasil: ${jawaban}`);
+    } else if (hitung == '2') {
+        var s1 = parseInt(prompt('Masukan sisi (s1):'));
+                                    var s2 = parseInt(prompt('Masukan sisi (s2):'));
+                                    var jawaban = s1 * s2 ;
+                                    document.writeln(`<br>Bangun Datar: ${bangunDatar1} <br>Jenis Hitung: Luas <br>Hasil: ${jawaban}`)
+    }
+} else if (pilih == '4') {
+    var hitung = prompt('Pilih yang ingin dihitung: \n1.Keliling \n2.Luas');
+                                        if (hitung == '1') {
+        var p = prompt('Masukkan Panjang (p):');
+                                        var l = prompt('Masukkan Lebar (l)')
+                                        var jawaban = 2 * (p + l);
+                                        document.writeln(`<br>Bangun Datar: ${bangunDatar4} <br>Jenis Hitung: Keliling <br>Hasil: ${jawaban}`);
+    } else if (hitung == '2') {
+        var p = prompt('Masukkan Panjang (p):');
+                                            var l = prompt('Masukkan Lebar (l)')
+                                            var jawaban = p * l;
+                                            document.writeln(`<br>Bangun Datar: ${bangunDatar4} <br>Jenis Hitung: Luas <br>Hasil: ${jawaban}`)
+    }
+}
+    </script>
+</body>
+
+</html>
