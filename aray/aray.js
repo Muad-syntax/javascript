@@ -15,9 +15,7 @@ let dataSiswa = {
     nilaiAkademik: 95
 }
 document.writeln("<h3>Data Siswa</h3>")
-document.writeln(`<b>Nama Depan: </b>${dataSiswa.namaDepan}`)
-document.writeln(`<br><b>Nama Belakang: </b>${dataSiswa.namaBelakang}`)
-document.writeln(`<br><b>Jurusan: </b>${dataSiswa.jurusan}`)
-document.writeln(`<br><b>Kelas: </b>${dataSiswa.kelas}`)
-document.writeln(`<br><b>Umur: </b>${dataSiswa.umur}`)
-document.writeln(`<br><b>Nilai Akademik: </b>${dataSiswa.nilaiAkademik}`)
+
+for(let key in dataSiswa) {
+    document.write(`<b>${key}: </b>${dataSiswa[key]}<br>`)
+}
