@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="loopingAray.js"></script>
+
+    <script>
+        //Tugas 1 (memanggil nama dengan function)
+        function panggilNama(){
+            document.writeln("Hallo, Muad! Selamat belajar JavaScript.<br>")
+        }
+
+        //Tugas 2 (menghitung luas lingkaran)
+        function hitungLuasLingkaran(r){
+            let luas = Math.PI * r * r
+            return luas;
+        }
+        panggilNama()
+        let r = parseInt(prompt("Masukan jari jari"))
+        let hasil = hitungLuasLingkaran(r);
+        document.write("Luas Lingkaran: ",hasil.toFixed(2));
+    </script>
+
+    <script>
+        //menentukan ganjil genap
+        function ganjilGenap(input) {
+
+            if (input % 2 === 0) {
+                return "adalah angka genap";
+            } else {
+                return "adalah angka ganjil";
+            }
+
+        }
+        let angka = parseInt(prompt("masukan angka"));
+        let hasil2 = ganjilGenap(angka);
+        alert(`angka ${angka} ${hasil2}`)
+    </script>
+
+    <script>
+        function konversiSuhu(derajat, keUnit) {
+            if (keUnit === "F") {
+                // Konversi dari Celcius ke Fahrenheit
+                let fahrenheit = (derajat * 9 / 5) + 32;
+                return fahrenheit;
+            } else if (keUnit === "C") {
+                // Konversi dari Fahrenheit ke Celcius
+                let celcius = (derajat - 32) * 5 / 9;
+                return celcius;
+            } else {
+                return "Unit tidak dikenal. Gunakan 'F' atau 'C'.";
+            }
+        }
+
+        // Contoh Penggunaan:
+        console.log(konversiSuhu(30, "F"));
+        console.log(konversiSuhu(86, "C"));
+    </script>
+</body>
+</html>

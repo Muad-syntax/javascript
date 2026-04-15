@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+        function konversiSuhu(derajat, keUnit) {
+            if (keUnit === "F") {
+                // Konversi dari Celcius ke Fahrenheit
+                let fahrenheit = (derajat * 9 / 5) + 32;
+                return fahrenheit;
+            } else if (keUnit === "C") {
+                // Konversi dari Fahrenheit ke Celcius
+                let celcius = (derajat - 32) * 5 / 9;
+                return celcius;
+            } else {
+                return "Unit tidak dikenal. Gunakan 'F' atau 'C'.";
+            }
+        }
+
+        // Contoh Penggunaan:
+        document.write("Fahrenhite: " + konversiSuhu(30, "F") + "<br>");
+        document.write("Celcius: " + konversiSuhu(86, "C"));
+    </script>
+</body>
+</html>

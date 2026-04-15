@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas DOM API</title>
+</head>
+
+<body>
+    <h1 id="judul-utama">Selamat Datang di Kelas RPL</h1>
+    <p class="deskripsi">Ini adalah paragraf pertama yang akan kita ubah.</p>
+
+    <button id="btn-ubah">Ubah Konten</button>
+
+    <script>
+
+        let judul = document.getElementById('judul-utama');
+        let btn = document.getElementById('btn-ubah');
+        let status = false;
+        btn.addEventListener("click", function () {
+
+            if (status === false) {
+                judul.innerText = "Belajar DOM Javascript sangat menyenangkan";
+
+                judul.style.color = "blue"
+                judul.style.fontSize = "36px"
+
+                status = true
+            } else {
+
+                judul.innerText = "Selamat Datang di Kelas RPL"
+
+                judul.style.color = "black"
+                judul.style.fontSize = "36px"
+
+                status = false
+            }
+
+        })
+    </script>
+</body>
+
+</html>
