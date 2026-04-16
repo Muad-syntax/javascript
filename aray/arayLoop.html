@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const daftarProduk = [
+
+            { id: 1, nama: "Laptop Pro 14", harga: 15000000, tersedia: true },
+            { id: 2, nama: "Mouse Wireles", harga: 250000, tersedia: true },
+            { id: 3, nama: "Keyboard Mechanical", harga: 850000, tersedia: false },
+            { id: 4, nama: "Monitor 24 Inch", harga: 2100000, tersedia: true }
+
+        ];
+
+        daftarProduk.forEach(function (produk) {
+            let dataProduk = `nama: ${produk.nama} | harga: ${produk.harga}`
+
+            if (produk.tersedia === true) {
+                dataProduk += " tersedia"
+            } else {
+                dataProduk += " tidak tersedia"
+            }
+            document.write(dataProduk + "<br>")
+        })
+    </script>
+</body>
+
+</html>
