@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Daftar Nilai Siswa Kelas XI Jurusan RPL 2</h1>
+    <div id="wadah"></div>
+    <script>
+        let wadah = document.getElementById("wadah");
+        let nilaiSiswa = [
+            {nama : "Muad", nilai : 97},
+            {nama : "Zein", nilai : 87},
+            {nama : "Dimas", nilai : 90},
+            {nama : "Nabil", nilai : 73},
+            {nama : "Umar", nilai : 98},
+            {nama : "Azka", nilai : 69},
+            {nama : "Arfan", nilai : 50}
+        ];
+
+        nilaiSiswa.forEach(function(data){
+            let daftar = document.createElement("b");
+            let nlai = document.createElement("b");
+            let batas = document.createElement("b");
+
+            daftar.innerHTML = `<br> Nama: ${data.nama}<br>`;
+            nlai.innerHTML = `Nilai: ${data.nilai}<br>`;
+            batas.innerHTML = `==============`;
+
+            wadah.appendChild(daftar)
+            wadah.appendChild(nlai)
+            wadah.appendChild(batas)
+
+            if(data.nilai < 75){
+                nlai.style.color = "red"
+            }
+        })
+
+    </script>
+</body>
+</html>

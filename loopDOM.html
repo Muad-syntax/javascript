@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nama nama siswa</h1>
+    <div id="wadah"></div>
+
+    <script>
+        let wadah = document.getElementById("wadah");
+        
+        let siswaRplDua = ["Muad", "Arfan", "Dimas","Khaffa","Umar","Nabil","Kelvin","Zein"];
+        
+        siswaRplDua.forEach(function(siswa){
+            let nama = document.createElement("b");
+            nama.innerHTML = "- " + siswa + "<br>";
+            wadah.appendChild(nama);
+        })
+
+    </script>
+</body>
+</html>

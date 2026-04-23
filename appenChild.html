@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;" >Buat Paragraf Selamat Datang</h1>
+    <div id="wadah">
+
+    </div>
+
+    <script>
+        let paragraf = document.createElement("p")
+        let wadah = document.getElementById("wadah")
+        let nama = document.createElement("b")
+        
+        nama.innerText = "Muad"
+        nama.style.fontSize = "3em"
+        paragraf.innerHTML = "Lorem <a href='#'>ipsum dolor sit amet</a> consectetur adipisicing elit. Saepe, ab incidunt cum nobis facilis omnis optio natus ea mollitia nesciunt deserunt animi placeat dignissimos impedit numquam est suscipit! Officia, molestias?"
+        wadah.style.textAlign = "center"
+        paragraf.style.fontSize = "2em"
+        paragraf.style.fontFamily = "Arial"
+        
+        wadah.appendChild(nama)
+        wadah.appendChild(paragraf)
+    </script>
+</body>
+</html>

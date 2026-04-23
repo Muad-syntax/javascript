@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="judul">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat adipisci modi aperiam ad veniam tempora numquam et, dolor impedit. Minus id nam amet atque officiis maiores aut placeat voluptatibus quod?</div>
+    <br>
+    <button id="btn-ubah" onclick="ubahTeks()" >ubah content</button>
+    <script>
+        function ubahTeks() {
+            let judul = document.getElementById("judul")
+            judul.innerHTML = "<u><b>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat adipisci modi aperiam ad veniam tempora numquam et, dolor impedit. Minus id nam amet atque officiis maiores aut placeat voluptatibus quod?</b></u>"
+            judul.style.fontSize = "3em"
+        }
+
+    </script>
+</body>
+</html>
