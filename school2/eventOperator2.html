@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="nilai1"><br>
+    <input type="text" id="nilai2"> <br> <br>
+    <button id="btn" onclick="perkalian()">Kali</button>
+    <button id="btn" onclick="pembagian()">Bagi</button>
+    <button id="btn" onclick="pertambahan()">Tambah</button>
+    <button id="btn" onclick="pengurangan()">Kurang</button>
+    <h1 id="tampil"></h1>
+    <script>
+        let tampil = document.getElementById("tampil");
+        let btn = document.getElementById("btn");
+        
+        function perkalian(){
+            let nilai1 = parseInt(document.getElementById("nilai1").value);
+            let nilai2 = parseInt(document.getElementById("nilai2").value);
+    
+            let hasil = nilai1 * nilai2
+            tampil.innerText = hasil
+
+        }
+        function pertambahan(){
+            let nilai1 = parseInt(document.getElementById("nilai1").value);
+            let nilai2 = parseInt(document.getElementById("nilai2").value);
+
+            let hasil = nilai1 + nilai2
+            tampil.innerText = hasil
+        }
+        function pengurangan(){
+            let nilai1 = parseInt(document.getElementById("nilai1").value);
+            let nilai2 = parseInt(document.getElementById("nilai2").value);
+    
+            let hasil = nilai1 - nilai2
+            tampil.innerText = hasil
+
+        }
+        function pembagian(){
+            let nilai1 = parseInt(document.getElementById("nilai1").value);
+            let nilai2 = parseInt(document.getElementById("nilai2").value);
+    
+            let hasil = nilai1 / nilai2
+            tampil.innerText = hasil
+
+        }
+
+    </script>
+</body>
+
+</html>
