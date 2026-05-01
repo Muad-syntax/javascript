@@ -6,7 +6,7 @@ function setupMesin(idContainer, jenisOperator) {
     // maka hentikan fungsi ini sekarang juga menggunakan 'return', 
     // agar tidak lanjut ke bawah dan menyebabkan error.
     if (!container) {
-        return; 
+        return;
     }
     // -----------------------------------
 
@@ -54,10 +54,35 @@ function setupMesin(idContainer, jenisOperator) {
         }
         muncul.innerText = `Hasilnya: ${hasilBenar}`;
     });
-    
+
     btnLanjut.addEventListener("click", function () {
-        window.location.reload();
+        bilangan1 = Math.floor(Math.random() * 20) + 1;
+        bilangan2 = Math.floor(Math.random() * 20) + 1;
+
+        soal1.innerHTML = bilangan1
+        soal2.innerHTML = bilangan2
+
+        if (jenisOperator === "kali") {
+            hasilBenar = bilangan1 * bilangan2;
+        } else if (jenisOperator === "bagi") {
+            hasilBenar = parseFloat((bilangan1 / bilangan2).toFixed(2));
+        } else if (jenisOperator === "tambah") {
+            hasilBenar = bilangan1 + bilangan2;
+        } else if (jenisOperator === "kurang") {
+            hasilBenar = bilangan1 - bilangan2;
+        }
+
+        inputJawaban.value = "";
+        status.innerText = "";
+        muncul.innerText = "";
     });
+
+    let btnReload = document.getElementById("btn-reload");
+    if (btnReload){
+        btnReload.addEventListener("click", function(){
+            window.location.reload();
+        });
+    }
 }
 
 // EKSEKUSI
@@ -66,3 +91,12 @@ setupMesin("container-perkalian", "kali");
 setupMesin("container-pembagian", "bagi");
 setupMesin("container-penambahan", "tambah");
 setupMesin("container-pengurangan", "kurang");
+
+let hamburgerBtn = document.getElementById("hamburger-btn");
+let navLinks = document.getElementById("nav-links");
+
+if (hamburgerBtn && navLinks){
+    hamburgerBtn.addEventListener("click", function(){
+        navLinks.classList.toggle("aktif")
+    });
+}

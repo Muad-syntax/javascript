@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayo Main</title>
@@ -8,10 +10,16 @@
 <body>
     <header class="heading">
         <nav class="navbar">
-            <a href="#container-perkalian">Perkalian</a>
-            <a href="#container-pembagian">Pembagian</a>
-            <a href="#container-penambahan">Penambahan</a>
-            <a href="#container-pengurangan">Pengurangan</a>
+            <button class="hamburger" id="hamburger-btn">☰</button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#container-perkalian">Perkalian</a>
+                <a href="#container-pembagian">Pembagian</a>
+                <a href="#container-penambahan">Penambahan</a>
+                <a href="#container-pengurangan">Pengurangan</a>
+            </div>
+            
+            <button id="btn-reload">Muat ulang semua soal</button>
         </nav>
     </header>
 
@@ -97,4 +105,6 @@
     <script src="script.js"></script>
 
 
-</body></html>
+</body>
+
+</html>
