@@ -30,7 +30,7 @@ function setupMesin(idContainer, jenisOperator) {
     if (jenisOperator === "kali") {
         hasilBenar = bilangan1 * bilangan2;
     } else if (jenisOperator === "bagi") {
-        hasilBenar = bilangan1 / bilangan2;
+        hasilBenar = parseFloat((bilangan1 / bilangan2).toFixed(2));
     } else if (jenisOperator === "tambah") {
         hasilBenar = bilangan1 + bilangan2;
     } else if (jenisOperator === "kurang") {
@@ -39,7 +39,7 @@ function setupMesin(idContainer, jenisOperator) {
 
     btnJawab.addEventListener("click", function () {
         let textInput = inputJawaban.value.trim();
-        let jawabanUser = parseInt(textInput);
+        let jawabanUser = parseFloat(textInput);
 
         if (textInput === "") {
             alert("Jawab dulu dong");
