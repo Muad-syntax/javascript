@@ -23,6 +23,7 @@
         nilaiSiswa.forEach(function(data){
             let daftar = document.createElement("b");
             let nlai = document.createElement("b");
+            let status = document.createElement("b")
             let batas = document.createElement("b");
 
             daftar.innerHTML = `<br> Nama: ${data.nama}<br>`;
@@ -31,10 +32,15 @@
 
             wadah.appendChild(daftar)
             wadah.appendChild(nlai)
+            wadah.appendChild(status)
             wadah.appendChild(batas)
 
             if(data.nilai < 75){
                 nlai.style.color = "red"
+                status.innerHTML = "Status: Remedial<br>"
+            } else {
+                nlai.style.color = "green"
+                status.innerHTML = "Status: Lulus<br>"
             }
         })
 

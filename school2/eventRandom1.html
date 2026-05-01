@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b>
+        <span id="wadah1"></span>
+        <span>+</span>
+        <span id="wadah2"></span>
+        <span>=</span>
+        <span>?</span>
+        <br>
+        <input type="text" id="jawaban">
+    </b>
+    <br>
+    <button id="btn-jawab" onclick="jawabanmu()">Jawab</button>
+    <button id="btn-lanjut">Lanjut</button>
+    <h1 id="status"></h1>
+    <h1 id="muncul"></h1>
+    <script>
+
+        let wadah1 = document.getElementById("wadah1");
+        let wadah2 = document.getElementById("wadah2");
+        let btnJawab = document.getElementById("btn-jawab")
+        let btnLanjut = document.getElementById("btn-lanjut")
+        let bilangan1 = Math.floor(Math.random() * 20) + 1;
+        let bilangan2 = Math.floor(Math.random() * 20) + 1;
+
+
+        function jawabanmu() {
+            let jawaban = parseInt(document.getElementById("jawaban").value)
+            let muncul = document.getElementById("muncul")
+            let status = document.getElementById("status")
+            let hasil = bilangan1 + bilangan2
+            
+            if (jawaban === hasil) {
+                status.innerText = "Benar"
+                status.style.color = "green"
+            } else {
+                status.innerText = "Salah"
+                status.style.color = "red"
+                
+            }
+            muncul.innerText = "Hasilnya: " + hasil
+        }
+       
+        wadah1.innerText = bilangan1
+        wadah2.innerText = bilangan2
+    </script>
+</body>
+
+</html>
