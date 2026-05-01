@@ -17,40 +17,65 @@
         <br>
         <input type="text" id="jawaban">
     </b>
+
     <br>
     <button id="btn-jawab" onclick="jawabanmu()">Jawab</button>
     <button id="btn-lanjut">Lanjut</button>
+
     <h1 id="status"></h1>
     <h1 id="muncul"></h1>
-    <script>
 
+    <script>
+        // wadah
         let wadah1 = document.getElementById("wadah1");
         let wadah2 = document.getElementById("wadah2");
+        // tombol
         let btnJawab = document.getElementById("btn-jawab")
         let btnLanjut = document.getElementById("btn-lanjut")
+        // angka random
         let bilangan1 = Math.floor(Math.random() * 20) + 1;
         let bilangan2 = Math.floor(Math.random() * 20) + 1;
 
-
+        // fungsi untuk jawaban
         function jawabanmu() {
-            let jawaban = parseInt(document.getElementById("jawaban").value)
+            let teksInput = document.getElementById("jawaban").value.trim();
+            let jawaban = parseInt(teksInput);
             let muncul = document.getElementById("muncul")
             let status = document.getElementById("status")
+
+            // operator matematika
             let hasil = bilangan1 + bilangan2
-            
+
+            // jika user tidak menjawab
+            if (teksInput === "") {
+                status.innerHTML = "";
+                muncul.innerHTML = "";
+
+                alert("Jawab dulu doong!!");
+                return;
+            }
+            // jika user menjawab
             if (jawaban === hasil) {
                 status.innerText = "Benar"
                 status.style.color = "green"
             } else {
                 status.innerText = "Salah"
                 status.style.color = "red"
-                
+
             }
+
+            // hasilnya
             muncul.innerText = "Hasilnya: " + hasil
         }
-       
+        // memunculkan bilangan random
         wadah1.innerText = bilangan1
         wadah2.innerText = bilangan2
+
+        // fungsi untuk reload halaman
+        function muatUlangHalaman() {
+            window.location.reload();
+        }
+        btnLanjut.addEventListener("click", muatUlangHalaman);
     </script>
 </body>
 
