@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>angka 1</label><br>
+    <input type="text" id="angka1"><br>
+    <label>angka 2</label><br>
+    <input type="text" id="angka2">
+    <button onclick="penambahan()">=</button>
+    <div id="wadah"></div>
+    <script>
+        function penambahan(){
+            let angka1 = parseInt(document.getElementById("angka1").value);
+            let angka2 = parseInt(document.getElementById("angka2").value);
+            let wadah = document.getElementById("wadah");
+            let hasil = angka1 + angka2;
+        
+            wadah.innerHTML = `<h1>${hasil}</h1>`
+
+
+        }
+    </script>
+</body>
+</html>

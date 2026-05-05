@@ -8,6 +8,12 @@
 </head>
 
 <body>
+    <h2 id="timer" style="color: blue;"></h2>
+
+    <span id="benar"></span>
+    <span id="salah"></span><br>
+    <span id="nyawa"></span>
+    <h3 id="displayPoint"></h3>
     <b>
         <span id="wadah1"></span>
         <span>+</span>
@@ -20,7 +26,7 @@
 
     <br>
     <button id="btn-jawab" onclick="jawabanmu()">Jawab</button>
-    <button id="btn-lanjut">Lanjut</button>
+    <button id="btn-lanjut" onclick="generateSoal()">Lanjut</button>
 
     <h1 id="status"></h1>
     <h1 id="muncul"></h1>
@@ -29,12 +35,72 @@
         // wadah
         let wadah1 = document.getElementById("wadah1");
         let wadah2 = document.getElementById("wadah2");
+        let displayPoint = document.getElementById("displayPoint");
+        let benar = document.getElementById("benar");
+        let salah = document.getElementById("salah");
+        let nyawa = document.getElementById("nyawa"); 
+        let elemenTimer = document.getElementById("timer");
+
         // tombol
         let btnJawab = document.getElementById("btn-jawab")
         let btnLanjut = document.getElementById("btn-lanjut")
         // angka random
         let bilangan1 = Math.floor(Math.random() * 20) + 1;
         let bilangan2 = Math.floor(Math.random() * 20) + 1;
+
+        // nyawa
+        let totalNyawa = 3;
+
+        // score
+        let scoreBenar = 0;
+        let scoreSalah = 0;
+
+        // point
+        let point = 0;
+
+        // pengatur waktu
+        let waktuTersisa = 30;
+        let intervalWaktu;
+
+        function mulaiTimer(){
+            elemenTimer.innerText = `Waktu tersisa: ${waktuTersisa} detik`;
+
+            intervalWaktu = setInterval(function(){
+                waktuTersisa -= 1;
+                elemenTimer.innerText = `Waktu tersisa: ${waktuTersisa} detik`;
+
+                // jika waktu habis
+                if (waktuTersisa <= 0){
+                    clearInterval(intervalWaktu);
+                    alert("Game Over! Waktu Habis.");
+
+                    // menonaktifkan permainan
+                    document.getElementById("jawaban").disabled = true;
+                    btnJawab.disabled = true
+                    btnLanjut.disabled = true
+                }
+            }, 1000);
+        }
+
+        // fungsi untuk point
+        function tampilkanPoint(){
+            displayPoint.innerText = `Point: ${point}`;
+        }
+
+        // score
+        function tampilkanScoreBenar(){
+            benar.innerHTML = `benar: ${scoreBenar}`;
+            benar.style.color = "green"
+        }
+        function tampilkanScoreSalah(){
+            salah.innerHTML = `salah: ${scoreSalah}`;
+            salah.style.color = "red"
+        }
+
+        // nyawa
+        function tampilkanNyawa(){
+            nyawa.innerHTML = `Nyawa: ${totalNyawa}`;
+        }
 
         // fungsi untuk jawaban
         function jawabanmu() {
@@ -45,7 +111,7 @@
 
             // operator matematika
             let hasil = bilangan1 + bilangan2
-
+            
             // jika user tidak menjawab
             if (teksInput === "") {
                 status.innerHTML = "";
@@ -54,14 +120,36 @@
                 alert("Jawab dulu doong!!");
                 return;
             }
+
             // jika user menjawab
             if (jawaban === hasil) {
+                scoreBenar += 1;
+                point += 1;
+                
                 status.innerText = "Benar"
                 status.style.color = "green"
+                
+                tampilkanPoint();
+                tampilkanScoreBenar();
             } else {
+                totalNyawa -= 1;
+                scoreSalah += 1;
                 status.innerText = "Salah"
                 status.style.color = "red"
 
+                tampilkanNyawa();
+                tampilkanScoreSalah();
+                // jika nyawa habis
+                if(totalNyawa === 0){
+                    clearInterval(intervalWaktu); // hentikan waktu jika mati duluan
+                    alert("You Die!");
+
+                    // menonaktifkan permainan jika jawaban habis
+                    document.getElementById("jawaban").disabled = true;
+                    btnJawab.disabled = true
+                    btnLanjut.disabled = true
+                    return;
+                }
             }
 
             // hasilnya
@@ -72,10 +160,26 @@
         wadah2.innerText = bilangan2
 
         // fungsi untuk reload halaman
-        function muatUlangHalaman() {
-            window.location.reload();
+        function generateSoal(){
+            bilangan1 =  Math.floor(Math.random() * 20) + 1
+            bilangan1 =  Math.floor(Math.random() * 20) + 1
+            wadah1.innerText = bilangan1
+            wadah2.innerText = bilangan2
+
+            // membersihkan input dan teks
+            document.getElementById("jawaban").value = "";
+            document.getElementById("status").innerText = "";
+            document.getElementById("muncul").innerText = "";
+            document.getElementById("jawaban").focus();
         }
-        btnLanjut.addEventListener("click", muatUlangHalaman);
+
+        // menjalankan function
+        generateSoal();
+        tampilkanPoint();
+        tampilkanScoreBenar();
+        tampilkanScoreSalah();
+        tampilkanNyawa();
+        mulaiTimer();
     </script>
 </body>
 

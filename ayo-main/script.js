@@ -1,3 +1,8 @@
+const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+const seconds = now.getSeconds();
+
 function setupMesin(idContainer, jenisOperator) {
     let container = document.getElementById(idContainer);
 
@@ -100,3 +105,8 @@ if (hamburgerBtn && navLinks){
         navLinks.classList.toggle("aktif")
     });
 }
+
+setInterval(() => {
+    const time = new Date().toLocaleTimeString();
+    document.getElementById("clock").innerText = time;
+}, 1000);
