@@ -30,52 +30,59 @@
     </style>
 </head>
 <body>
+    <!-- input -->
     <label>Tinggi badan</label><br>
     <input type="number" id="tinggi-badan" placeholder="cm"><br>
     <label>Berat badan</label><br>
     <input type="number" id="berat-badan" placeholder="kg"><br><br>
     <button id="hitung" onclick="hitungBMI()">Hitung BMI</button>
 
+    <!-- wadah -->
     <div id="hasil"></div>
     <div id="keterangan"></div>
     <img id="gambar" src="">
     <script>
+        
+        // ambil atribut wadah
         let hasil = document.getElementById("hasil")
         let keterangan = document.getElementById("keterangan")
         let beratBadan;
         let tinggiBadan;
+
+        // fungsinya
         function hitungBMI(){
+            // ambil atribut input
             beratBadan = parseFloat(document.getElementById("berat-badan").value);
             tinggiBadan = parseFloat(document.getElementById("tinggi-badan").value);
             gambar = document.getElementById("gambar")
             let tinggiBadanPerMeter = tinggiBadan / 100
             let hitung = beratBadan / (tinggiBadanPerMeter**2);
 
+            // perkondisian
             if(hitung < 18.5){
                 keterangan.innerText = "Kurus"
                 keterangan.style.color = "white"
                 gambar.src = "gambar/bbKurang.jpg"
-            } if (hitung >= 18.5 || hitung == 22.9) {
+            }else if (hitung >= 18.5 && hitung < 22.9) {
                 keterangan.innerText = "Ideal"
                 keterangan.style.color = "green"
                 gambar.src = "gambar/ideal.jpg"
-            } if (hitung >= 23.0 || hitung == 24.9) {
+            }else if (hitung >= 23.0 && hitung < 24.9) {
                 keterangan.innerText = "Dut"
                 keterangan.style.color = "orange"
                 gambar.src = "gambar/bbLebih.jpg"
-            } if (hitung >= 25.0 || hitung == 29.9) {
+            }else if (hitung >= 25.0 && hitung < 29.9) {
                 keterangan.innerText = "Gendut"
                 keterangan.style.color = "yellow"
                 gambar.src = "gambar/obesitasT1.jpg"
-            } if (hitung >= 30.0) {
+            }else if (hitung >= 30.0) {
                 keterangan.innerText = "OMAGAAA 😶"
                 keterangan.style.color = "red"
                 gambar.src = "gambar/obesitasT2.jpg"
             }
-            
+
+            // munculkan hasilnya kedalam wadah
             hasil.innerHTML = `<b>${hitung.toFixed(2)}</b>`
-
-
         }
 
     </script>
