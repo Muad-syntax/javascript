@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+            background: rgb(78, 78, 93);
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #foto-bmi {
+            margin-top: 20px;
+            max-width: 200px;
+            border-radius: 10px;
+            display: none; /* Sembunyikan gambar sebelum dihitung */
+        }
+        .hasil-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        img{
+            max-width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <label>Tinggi badan</label><br>
+    <input type="number" id="tinggi-badan" placeholder="cm"><br>
+    <label>Berat badan</label><br>
+    <input type="number" id="berat-badan" placeholder="kg"><br><br>
+    <button id="hitung" onclick="hitungBMI()">Hitung BMI</button>
+
+    <div id="hasil"></div>
+    <div id="keterangan"></div>
+    <img id="gambar" src="">
+    <script>
+        let hasil = document.getElementById("hasil")
+        let keterangan = document.getElementById("keterangan")
+        let beratBadan;
+        let tinggiBadan;
+        function hitungBMI(){
+            beratBadan = parseFloat(document.getElementById("berat-badan").value);
+            tinggiBadan = parseFloat(document.getElementById("tinggi-badan").value);
+            gambar = document.getElementById("gambar")
+            let tinggiBadanPerMeter = tinggiBadan / 100
+            let hitung = beratBadan / (tinggiBadanPerMeter**2);
+
+            if(hitung < 18.5){
+                keterangan.innerText = "Kurus"
+                keterangan.style.color = "white"
+                gambar.src = "gambar/bbKurang.jpg"
+            } if (hitung >= 18.5 || hitung == 22.9) {
+                keterangan.innerText = "Ideal"
+                keterangan.style.color = "green"
+                gambar.src = "gambar/ideal.jpg"
+            } if (hitung >= 23.0 || hitung == 24.9) {
+                keterangan.innerText = "Dut"
+                keterangan.style.color = "orange"
+                gambar.src = "gambar/bbLebih.jpg"
+            } if (hitung >= 25.0 || hitung == 29.9) {
+                keterangan.innerText = "Gendut"
+                keterangan.style.color = "yellow"
+                gambar.src = "gambar/obesitasT1.jpg"
+            } if (hitung >= 30.0) {
+                keterangan.innerText = "OMAGAAA 😶"
+                keterangan.style.color = "red"
+                gambar.src = "gambar/obesitasT2.jpg"
+            }
+            
+            hasil.innerHTML = `<b>${hitung.toFixed(2)}</b>`
+
+
+        }
+
+    </script>
+</body>
+</html>
