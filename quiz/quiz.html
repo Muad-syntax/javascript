@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz math</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="timer"></div>
+        <div class="question-box">
+            <span id="wadah1"></span>
+            <span>+</span>
+            <span id="wadah2"></span>
+            <span>=</span>
+            <span>?</span>
+        </div>
+
+        <input type="text" id="jawaban" placeholder="Masukkan jawaban Anda"><br>
+
+        <div class="info-box">
+            <span id="benar">✓ Benar: 0</span>
+            <span id="salah">✗ Salah: 0</span>
+        </div>
+
+        <h1 id="status"></h1>
+        <h1 id="muncul"></h1>
+
+        <div class="button-box">
+            <button type="submit" id="btn-jawab" onclick="jawabanmu()">Jawab</button>
+            <button type="submit" id="btn-lanjut" onclick="generateSoal()">Lanjut</button>
+            <button id="btn-reload">Muat ulang</button>
+            <button id="btn-clear">Clear Point</button>
+        </div>
+
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+</html>
