@@ -23,7 +23,7 @@ salah.innerText = `✗ Salah: ${jumlahSalah}`
 let bilangan1 = Math.floor(Math.random() * 21) + 1;
 let bilangan2 = Math.floor(Math.random() * 21) + 1;
 
-let waktuTersisa = 30;
+let waktuTersisa = 120;
 let intervalWaktu;
 
 function mulaiTimer() {

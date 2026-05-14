@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Matematik</title>
+    <link rel="stylesheet" href="advQuiz.css">
+</head>
+<body>
+    <header class="heading">
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger-btn">☰</button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#container-perkalian">Perkalian</a>
+                <a href="#container-pembagian">pembagian</a>
+                <a href="#container-penambahan">Penambahan</a>
+                <a href="#container-pengurangan">Pengurangan</a>
+            </div>
+
+            <div id="clock"></div>
+
+            <button id="btn-reload">Muat ulang semua soal</button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div id="container-perkalian">
+            <label>Perkalian</label>
+            <div class="soal-kali">
+                <span class="soal1"></span>
+                <span>x</span>
+                <span class="soal2"></span>
+                <span>=</span>
+                <span>?</span>
+
+                <input type="text" class="jawaban">
+                <button class="btn-jawab">Jawab</button>
+                <button class="btn-lanjut">Lanjut</button>
+                <p class="status"></p>
+                <p class="jawaban-komputer"></p>
+            </div>
+        </div>
+
+        <div id="container-pembagian">
+            <label>Pembagian</label>
+            <div class="soal-bagi">
+                <span class="soal1"></span>
+                <span>/</span>
+                <span class="soal2"></span>
+                <span>=</span>
+                <span>?</span>
+
+                <input type="text" class="jawaban">
+                <button class="btn-jawab">Jawab</button>
+                <button class="btn-lanjut">Lanjut</button>
+                <p class="status"></p>
+                <p class="jawaban-komputer"></p>
+            </div>
+        </div>
+
+        <div id="container-penambahan">
+            <label>Penambahan</label>
+            <div class="soal-tambah">
+                <span class="soal1"></span>
+                <span>+</span>
+                <span class="soal2"></span>
+                <span>=</span>
+                <span>?</span>
+
+                <input type="text" class="jawaban">
+                <button class="btn-jawab">Jawab</button>
+                <button class="btn-lanjut">Lanjut</button>
+                <p class="status"></p>
+                <p class="jawaban-komputer"></p>
+            </div>
+        </div>
+
+        <div id="container-pengurangan">
+            <label>Pengurangan</label>
+            <div class="soal-kurang">
+                <span class="soal1"></span>
+                <span>-</span>
+                <span class="soal2"></span>
+                <span>=</span>
+                <span>?</span>
+
+                <input type="text" class="jawaban">
+                <button class="btn-jawab">Jawab</button>
+                <button class="btn-lanjut">Lanjut</button>
+                <p class="status"></p>
+                <p class="jawaban-komputer"></p>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="advQuiz.js"></script>
+</body>
+</html>
