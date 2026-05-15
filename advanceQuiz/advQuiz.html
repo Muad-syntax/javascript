@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="advQuiz.css">
 </head>
 <body>
+    <div id="start-screen" class="start-screen">
+        <div class="start-screen-content">
+            <h1>Selamat datang di Quiz Matematik!</h1>
+            <p>Tekan tombol mulai untuk memulai perhitungan</p>
+            <button id="start-btn" class="btn-start">Mulai Quiz</button>
+        </div>
+    </div>
+
     <header class="heading">
         <nav class="navbar">
             <button class="hamburger" id="hamburger-btn">☰</button>
@@ -18,11 +26,21 @@
                 <a href="#container-pengurangan">Pengurangan</a>
             </div>
 
-            <div id="clock"></div>
+            <div id="timer">01:00</div>
 
             <button id="btn-reload">Muat ulang semua soal</button>
         </nav>
     </header>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Quiz Selesai!</h2>
+            <div id="modal-stars" class="stars"></div>
+            <div id="modal-stats" class="stats"></div>
+            <p id="modal-message" class="message"></p>
+            <button id="modal-close" class="btn-modal">Mail Lagi</button>
+        </div>
+    </div>
 
     <main class="main">
         <div id="container-perkalian">

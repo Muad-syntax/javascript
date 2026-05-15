@@ -9,9 +9,9 @@ let btnJawab = document.getElementById("btn-jawab")
 let btnLanjut = document.getElementById("btn-lanjut")
 let btnClear = document.getElementById("btn-clear")
 
-let audioGameOver = new Audio("gameOver.mp3")
-let audioBenar = new Audio("benar.mp3")
-let audioSalah = new Audio("salah.mp3")
+let audioGameOver = new Audio("../sound/gameOver.mp3")
+let audioBenar = new Audio("../sound/benar.mp3")
+let audioSalah = new Audio("../sound/salah.mp3")
 
 // Counter skor
 let jumlahBenar = parseInt(localStorage.getItem("simpanBenar")) || 0
@@ -23,7 +23,7 @@ salah.innerText = `✗ Salah: ${jumlahSalah}`
 let bilangan1 = Math.floor(Math.random() * 21) + 1;
 let bilangan2 = Math.floor(Math.random() * 21) + 1;
 
-let waktuTersisa = 120;
+let waktuTersisa = 10;
 let intervalWaktu;
 
 function mulaiTimer() {
