@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
-
     // Score Board & Reset Button
     const navbar = document.querySelector('.navbar');
     const scoreDisplay = document.createElement('div');

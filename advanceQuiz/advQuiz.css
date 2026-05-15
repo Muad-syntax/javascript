@@ -108,7 +108,7 @@ label {
 }
 
 /* --- Quiz Elements --- */
-.jawaban {
+.jawaban{
     display: block;
     width: 90%;
     max-width: 300px;
