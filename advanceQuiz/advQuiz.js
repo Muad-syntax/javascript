@@ -24,18 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
+
     // Score Board & Reset Button
     const navbar = document.querySelector('.navbar');
     const scoreDisplay = document.createElement('div');
     scoreDisplay.className = "score-board";
+    // Masukkan scoreDisplay SEBELUM timer agar urutannya bagus
     navbar.insertBefore(scoreDisplay, document.getElementById('timer'));
 
+    // --- Bagian Tombol Pindah ke Nav-Links (Menu Hamburger) ---
+    const navLinksContainer = document.getElementById('nav-links');
+    const reloadBtn = document.getElementById('btn-reload');
+
+    // Pindahkan tombol reload yang ada di HTML ke dalam menu
+    navLinksContainer.appendChild(reloadBtn);
+
+    // Buat tombol reset dan masukkan ke dalam menu juga
     const resetBtn = document.createElement('button');
     resetBtn.innerText = 'Reset Poin';
     resetBtn.className = 'btn-reset';
-    resetBtn.style.marginLeft = '10px';
     resetBtn.onclick = resetScores;
-    navbar.appendChild(resetBtn);
+    navLinksContainer.appendChild(resetBtn);
 
     const startScreen = document.getElementById('start-screen');
     const startBtn = document.getElementById('start-btn');
