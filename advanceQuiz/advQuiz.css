@@ -1,5 +1,6 @@
 * {
     scroll-behavior: smooth;
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
 }
 
 :root {
@@ -27,11 +28,18 @@ body {
 .navbar {
     background-color: var(--dark);
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1rem; /* Mengurangi padding samping */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Izinkan elemen turun ke bawah jika penuh */
+    gap: 10px; /* Jarak antar elemen agar tidak menempel */
+}
+
+/* Sembunyikan hamburger secara default (Desktop) */
+.hamburger {
+    display: none;
 }
 
 .nav-links a {
@@ -48,23 +56,36 @@ body {
 
 .score-board {
     background: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px;
+    padding: 5px 12px;
     border-radius: 20px;
     font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Mencegah teks skor terpotong */
+}
+
+#timer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 70px;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 /* --- Layout --- */
 .main {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 [id^="container-"] {
     background: white;
+    text-align: center;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -77,7 +98,7 @@ body {
 
 label {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: var(--primary);
@@ -87,102 +108,86 @@ label {
 }
 
 /* --- Quiz Elements --- */
-.soal-kali,
-.soal-bagi,
-.soal-tambah,
-.soal-kurang {
-    font-size: 1.5rem;
-    text-align: center;
-}
-
 .jawaban {
     display: block;
-    width: 80%;
+    width: 90%;
+    max-width: 300px;
     margin: 15px auto;
     padding: 10px;
     font-size: 1.2rem;
     border: 2px solid var(--light);
     border-radius: 8px;
     text-align: center;
+    
 }
 
 button {
     cursor: pointer;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
     transition: opacity 0.3s;
 }
 
-.btn-jawab {
-    background-color: var(--primary);
-    color: white;
-}
+.btn-jawab { background-color: var(--primary); color: white; }
+.btn-lanjut { background-color: var(--light); color: var(--dark); }
+.btn-reset { background-color: var(--error); color: white; font-size: 0.75rem; }
+#btn-reload { background-color: var(--success); color: white; font-size: 0.75rem; }
 
-.btn-lanjut {
-    background-color: var(--light);
-    color: var(--dark);
-}
+/* --- Responsive Layout Fix --- */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0.5rem;
+        justify-content: space-around; /* Menyebar elemen lebih rapi di HP */
+    }
 
-.btn-reset {
-    background-color: var(--error);
-    color: white;
-    font-size: 0.7rem;
-}
+    /* Membuat tombol reload dan reset lebih kecil atau diposisikan khusus */
+    #btn-reload, .btn-reset {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
 
-#btn-reload {
-    background-color: var(--success);
-    color: white;
-}
+    .hamburger {
+        order: 1; /* Posisi kiri */
+    }
+    
+    .score-board {
+        order: 2;
+    }
 
-button:hover {
-    opacity: 0.8;
-}
+    #timer {
+        order: 3;
+    }
 
-.status {
-    margin-top: 10px;
-    font-weight: bold;
-    min-height: 1.5rem;
-}
+    /* Baris kedua untuk tombol aksi di layar sangat kecil */
+    #btn-reload {
+        order: 4;
+    }
 
-.jawaban-komputer {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    font-style: italic;
-}
-
-/* --- Responsive Menu --- */
-.hamburger {
-    background: none;
-    color: white;
-    font-size: 1.5rem;
-    display: none;
-}
-
-#timer {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    min-width: 100px;
-    text-align: center;
+    .btn-reset {
+        order: 5;
+    }
 }
 
 @media (max-width: 890px) {
     .hamburger {
-        display: block;
+        display: block; /* Munculkan hamburger hanya di bawah 890px */
+        background: none;
+        color: white;
+        font-size: 1.5rem;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 100%; /* Menempel di bawah navbar */
         left: 0;
         width: 100%;
         background: var(--dark);
         padding: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .nav-links.active {
@@ -190,11 +195,11 @@ button:hover {
     }
 
     .nav-links a {
-        margin: 10px 0;
+        margin: 10px 20px;
     }
 }
 
-/* ====================== CUSTOM MODAL ====================== */
+/* --- Modal & Start Screen (Tetap sama) --- */
 .modal {
     display: none;
     position: fixed;
@@ -208,11 +213,11 @@ button:hover {
 
 .modal-content {
     background: white;
-    padding: 30px 40px;
+    padding: 25px;
     border-radius: 20px;
     text-align: center;
+    width: 90%;
     max-width: 400px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     animation: popUp 0.4s ease;
 }
 
@@ -221,83 +226,42 @@ button:hover {
     to { transform: scale(1); opacity: 1; }
 }
 
-.stars {
-    font-size: 3.5rem;
-    margin: 15px 0;
-    letter-spacing: 8px;
-}
-
-.stats {
-    font-size: 1.1rem;
-    margin: 15px 0;
-    line-height: 1.6;
-}
-
-.message {
-    font-size: 1.05rem;
-    color: #2c3e50;
-    margin: 15px 0 25px;
-}
+.stars { font-size: 2.5rem; margin: 10px 0; color: #f1c40f; }
+.stats { font-size: 1rem; margin: 10px 0; line-height: 1.5; }
+.message { font-size: 1rem; color: #2c3e50; margin: 10px 0 20px; }
 
 .btn-modal {
     background: var(--primary);
     color: white;
-    padding: 12px 30px;
-    font-size: 1.1rem;
+    padding: 10px 25px;
     border-radius: 50px;
-    cursor: pointer;
 }
 
-.btn-modal:hover {
-    background: #3578c1;
-    transform: translateY(-2px);
+.start-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 62, 80, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
 }
-    .start-screen {
-        position: fixed;
-        inset: 0;
-        background: rgba(44, 62, 80, 0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3000;
-        padding: 20px;
-    }
 
-    .start-screen-content {
-        width: 100%;
-        max-width: 480px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.08);
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-    }
+.start-screen-content {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .start-screen h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #f1c40f;
-    }
-
-    .start-screen p {
-        color: #ecf0f1;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
-
-    .btn-start {
-        background-color: var(--primary);
-        color: white;
-        border-radius: 999px;
-        padding: 15px 30px;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.3s;
-    }
-
-    .btn-start:hover {
-        opacity: 0.85;
-    }
-
+.btn-start {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
