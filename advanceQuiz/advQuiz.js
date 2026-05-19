@@ -25,26 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-    // Score Board & Reset Button
+    // Score Board
     const navbar = document.querySelector('.navbar');
     const scoreDisplay = document.createElement('div');
     scoreDisplay.className = "score-board";
     // Masukkan scoreDisplay SEBELUM timer agar urutannya bagus
     navbar.insertBefore(scoreDisplay, document.getElementById('timer'));
 
-    // --- Bagian Tombol Pindah ke Nav-Links (Menu Hamburger) ---
-    const navLinksContainer = document.getElementById('nav-links');
+    // --- Bagian Inisialisasi Tombol Aksi ---
     const reloadBtn = document.getElementById('btn-reload');
-
-    // Pindahkan tombol reload yang ada di HTML ke dalam menu
-    navLinksContainer.appendChild(reloadBtn);
-
-    // Buat tombol reset dan masukkan ke dalam menu juga
-    const resetBtn = document.createElement('button');
-    resetBtn.innerText = 'Reset Poin';
-    resetBtn.className = 'btn-reset';
+    const resetBtn = document.getElementById('btn-reset');
     resetBtn.onclick = resetScores;
-    navLinksContainer.appendChild(resetBtn);
 
     const startScreen = document.getElementById('start-screen');
     const startBtn = document.getElementById('start-btn');
@@ -61,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startTimer();
     }
 
-    document.getElementById('btn-reload').addEventListener('click', () => {
+    reloadBtn.addEventListener('click', () => {
         if (confirm("Muat ulang semua soal dan timer?")) location.reload();
     });
 
@@ -261,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initTimerSound() {
         timerAudio = new Audio("../sound/suaraJam.mp3");
         timerAudio.loop = true;
-        timerAudio.volume = 0.6;        // Volume sedang (bisa diubah 0.3 - 1.0)
+        timerAudio.volume = 0.6;
     }
 
     function stopTimerSound() {

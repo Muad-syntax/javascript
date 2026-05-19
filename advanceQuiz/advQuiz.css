@@ -28,14 +28,13 @@ body {
 .navbar {
     background-color: var(--dark);
     color: white;
-    padding: 0.8rem 1rem; /* Mengurangi padding samping */
+    padding: 0.8rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap; /* Izinkan elemen turun ke bawah jika penuh */
-    gap: 10px; /* Jarak antar elemen agar tidak menempel */
+    gap: 10px;
 }
 
 /* Sembunyikan hamburger secara default (Desktop) */
@@ -43,10 +42,15 @@ body {
     display: none;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
@@ -55,13 +59,19 @@ body {
     color: var(--primary);
 }
 
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .score-board {
     background: rgba(255, 255, 255, 0.1);
     padding: 5px 12px;
     border-radius: 20px;
     font-weight: bold;
     font-size: 0.9rem;
-    white-space: nowrap; /* Mencegah teks skor terpotong */
+    white-space: nowrap;
 }
 
 #timer {
@@ -109,7 +119,7 @@ label {
 }
 
 /* --- Quiz Elements --- */
-.jawaban{
+.jawaban {
     display: block;
     width: 90%;
     max-width: 300px;
@@ -119,7 +129,6 @@ label {
     border: 2px solid var(--light);
     border-radius: 8px;
     text-align: center;
-    
 }
 
 button {
@@ -131,32 +140,14 @@ button {
     transition: opacity 0.3s;
 }
 
-.btn-jawab { background-color: var(--primary); color: white; }
-.btn-lanjut { background-color: var(--light); color: var(--dark); }
-.btn-reset { background-color: var(--error); color: white; font-size: 0.75rem; }
-#btn-reload { background-color: var(--success); color: white; font-size: 0.75rem; }
-
-/* --- Responsive Layout Fix --- */
-@media (max-width: 600px) {
-    .navbar {
-        padding: 0.5rem;
-        justify-content: space-around; /* Menyebar elemen lebih rapi di HP */
-    }
-
-    /* Membuat tombol reload dan reset lebih kecil atau diposisikan khusus */
-    #btn-reload, .btn-reset {
-        padding: 6px 10px;
-        font-size: 0.7rem;
-    }
-
-#btn-reload {
-    background-color: var(--success);
-    color: white;
-}
-
 button:hover {
     opacity: 0.8;
 }
+
+.btn-jawab { background-color: var(--primary); color: white; }
+.btn-lanjut { background-color: var(--light); color: var(--dark); }
+.btn-reset { background-color: var(--error); color: white; }
+#btn-reload { background-color: var(--success); color: white; }
 
 .status {
     margin-top: 10px;
@@ -170,41 +161,36 @@ button:hover {
     font-style: italic;
 }
 
-    #timer {
-        order: 3;
-    }
-
-    /* Baris kedua untuk tombol aksi di layar sangat kecil */
-    #btn-reload {
-        order: 4;
-    }
-
-    .btn-reset {
-        order: 5;
-    }
-}
-
-/* Ganti seluruh blok @media lama dengan ini */
+/* --- Responsive Layout Fix (Mobile & Tablet) --- */
 @media (max-width: 768px) {
     .navbar {
         padding: 0.5rem 1rem;
-        gap: 5px;
+        gap: 10px;
         justify-content: space-between;
     }
 
     .hamburger {
         display: block;
+        order: 1;
     }
 
+    .score-board {
+        order: 2;
+    }
+
+    #timer {
+        order: 3;
+    }
+
+    /* Mengubah menu agar mendorong konten ke bawah (tidak mengambang) */
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
         background: var(--dark);
-        padding: 10px;
+        padding: 15px 0;
+        order: 4; /* Berada di baris baru di bawah hamburger & timer */
+        gap: 15px;
     }
 
     .nav-links.active {
@@ -212,11 +198,26 @@ button:hover {
     }
 
     .nav-links a {
-        margin: 10px 0;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Merapikan posisi icon agar selalu bersampingan */
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 5px;
+    }
+
+    #btn-reload, .btn-reset {
+        padding: 8px 20px;
+        font-size: 1.1rem; /* Menyesuaikan ukuran icon emoji */
     }
 }
 
-/* --- Modal & Start Screen (Tetap sama) --- */
+/* --- Modal & Start Screen --- */
 .modal {
     display: none;
     position: fixed;
@@ -245,7 +246,6 @@ button:hover {
         transform: scale(0.6);
         opacity: 0;
     }
-
     to {
         transform: scale(1);
         opacity: 1;
@@ -267,52 +267,52 @@ button:hover {
     background: #3578c1;
     transform: translateY(-2px);
 }
-    .start-screen {
-        position: fixed;
-        inset: 0;
-        background: rgba(44, 62, 80, 0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3000;
-        padding: 20px;
-    }
 
-    .start-screen-content {
-        width: 100%;
-        max-width: 480px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.08);
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-    }
+.start-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 62, 80, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
 
-    .start-screen h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #f1c40f;
-    }
+.start-screen-content {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-    .start-screen p {
-        color: #ecf0f1;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
+.start-screen h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f1c40f;
+}
 
-    .btn-start {
-        background-color: var(--primary);
-        color: white;
-        border-radius: 999px;
-        padding: 15px 30px;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.3s;
-    }
+.start-screen p {
+    color: #ecf0f1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
 
-    .btn-start:hover {
-        opacity: 0.85;
-    }
+.btn-start {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 999px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
 
+.btn-start:hover {
+    opacity: 0.85;
+}
