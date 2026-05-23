@@ -140,7 +140,7 @@ button {
     transition: opacity 0.3s;
 }
 
-<<<<<<< HEAD
+
 .btn-jawab { background-color: var(--primary); color: white; }
 .btn-lanjut { background-color: var(--light); color: var(--dark); }
 .btn-reset { background-color: var(--error); color: white; font-size: 0.75rem; }
@@ -163,8 +163,7 @@ button {
     font-size: 100%;
 }
 
-=======
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
+
 button:hover {
     opacity: 0.8;
 }
@@ -186,7 +185,7 @@ button:hover {
     font-style: italic;
 }
 
-<<<<<<< HEAD
+
 /* --- Responsive Menu --- */
 .hamburger {
     background: none;
@@ -203,7 +202,7 @@ button:hover {
     min-width: 100px;
     text-align: center;
 }
-=======
+
 /* --- Responsive Layout Fix (Mobile & Tablet) --- */
 @media (max-width: 768px) {
     .navbar {
@@ -211,7 +210,7 @@ button:hover {
         gap: 10px;
         justify-content: space-between;
     }
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
+}
 
 @media (max-width: 890px) {
     .hamburger {
@@ -221,32 +220,13 @@ button:hover {
 
     .score-board {
         order: 2;
-<<<<<<< HEAD
+
         font-size: 0.85rem;
-=======
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
+
     }
 
     #timer {
         order: 3;
-<<<<<<< HEAD
-        font-size: 0.9rem;
-        min-width: 70px;
-        padding: 5px 10px;
-    }
-
-    /* Memasukkan tombol ke dalam menu vertikal */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--dark);
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-=======
     }
 
     /* Mengubah menu agar mendorong konten ke bawah (tidak mengambang) */
@@ -258,14 +238,13 @@ button:hover {
         padding: 15px 0;
         order: 4; /* Berada di baris baru di bawah hamburger & timer */
         gap: 15px;
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
     }
 
     .nav-links.active {
         display: flex;
     }
 
-<<<<<<< HEAD
+
     /* Styling tombol di dalam menu agar konsisten dengan link */
     .nav-links button {
         width: 100%;
@@ -275,7 +254,7 @@ button:hover {
         color: white;
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-=======
+    }
     .nav-links a {
         margin: 0;
         text-align: center;
@@ -293,7 +272,7 @@ button:hover {
     #btn-reload, .btn-reset {
         padding: 8px 20px;
         font-size: 1.1rem; /* Menyesuaikan ukuran icon emoji */
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
+
     }
 }
 

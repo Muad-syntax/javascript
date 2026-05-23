@@ -1,7 +1,7 @@
 
 function operatorAritmatik(operasi) {
-    let number1 = parseInt(document.getElementById("input-number1").value.trim());
-    let number2 = parseInt(document.getElementById("input-number2").value.trim());
+    let number1 = parseFloat(document.getElementById("input-number1").value.trim());
+    let number2 = parseFloat(document.getElementById("input-number2").value.trim());
     let result = document.getElementById("result")
 
     let total = 0;
@@ -14,7 +14,7 @@ function operatorAritmatik(operasi) {
     } else if (operasi === "kurang") {
         total = number1 - number2;
     }
-    result.innerText = `Hasilnya: ${total}`;
+    result.innerText = total;
 }
 
 function clearOperator() {

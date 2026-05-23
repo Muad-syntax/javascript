@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-<<<<<<< HEAD
+
     // --- Bagian Score Board Tetap di Navbar ---
-=======
+
     // Score Board
->>>>>>> 0dbc7e7a7916ed2d2a7c863ac0d7e8c6f6ef3fbd
+
     const navbar = document.querySelector('.navbar');
     const scoreDisplay = document.createElement('div');
     scoreDisplay.className = "score-board";

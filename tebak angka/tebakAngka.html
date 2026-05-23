@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka</title>
+    <link rel="stylesheet" href="tebakAngka.css">
+</head>
+<body>
+    <div class="container">
+        <div id="banyak-nebak" class="banyak-nebak"></div>
+        <p id="status">Tebak Angka Berapa? <br> 1-100</p>
+        <div id="muncul-angka"></div><br>
+        <input type="number" id="input-number" placeholder="tebak cobaaa!"><br><br>
+        <button type="button" id="btn-tebak" onclick="tebakAngka()">tebak</button>
+        <button type="button" id="btn-lanjut" onclick="lanjutNebak()">lanjut</button>
+        <button type="button" id="btn-reload">reload</button>
+    </div>
+    <script src="tebakAngka.js"></script>
+</body>
+</html>
