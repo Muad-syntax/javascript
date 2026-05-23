@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="tesJs.css">
+</head>
+<body>
+    <div class="container-box" id="container">
+        <label>Kalkulator</label><br>
+        <input type="number" id="input-number1"><br>
+        <input type="number" id="input-number2">
+        <div class="btn-box">
+            <button class="btn-kali" onclick="operatorAritmatik('kali')">X</button>
+            <button class="btn-bagi" onclick="operatorAritmatik('bagi')">/</button>
+            <button class="btn-tambah" onclick="operatorAritmatik('tambah')">+</button>
+            <button class="btn-kurang" onclick="operatorAritmatik('kurang')">-</button>
+            <button class="btn-clear" onclick="clearOperator()">C</button>
+        </div>
+        <div class="box-result">
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="tesJs.js"></script>
+</body>
+</html>
