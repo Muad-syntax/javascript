@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data siswa</h1>
+    <label>Tambah siswa</label><br>
+    <input type="text" id="input-data" ><br><br>
+    <button id="btn-tambah" >tambah</button><br><br>
+    <div id="wadah"></div>
+    <script>
+        
+
+        let wadah = document.getElementById("wadah");
+        let btnTambah = document.getElementById("btn-tambah")
+        let inputData = document.getElementById("input-data");
+        let siswaRplDua = ["Maulana","Ahmad", "Maliki"];
+
+        function tampilkanSiswa(){
+            wadah.innerHTML = "";
+            siswaRplDua.forEach(function (siswa) {
+                let nama = document.createElement("span");
+                nama.innerHTML = "-" + siswa + "<br>";
+                wadah.appendChild(nama);
+            })
+        };
+        btnTambah.addEventListener("click", function(){
+            let namaBaru = inputData.value.trim();
+            
+        })
+        tampilkanSiswa()
+
+    </script>
+</body>
+</html>
