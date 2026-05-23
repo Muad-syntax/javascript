@@ -150,8 +150,7 @@ button {
     }
 
 #btn-reload {
-    background-color: var(--success);
-    color: white;
+    font-size: 100%;
 }
 
 button:hover {
@@ -170,49 +169,67 @@ button:hover {
     font-style: italic;
 }
 
-    #timer {
-        order: 3;
-    }
-
-    /* Baris kedua untuk tombol aksi di layar sangat kecil */
-    #btn-reload {
-        order: 4;
-    }
-
-    .btn-reset {
-        order: 5;
-    }
+/* --- Responsive Menu --- */
+.hamburger {
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    display: none;
 }
 
-/* Ganti seluruh blok @media lama dengan ini */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0.5rem 1rem;
-        gap: 5px;
-        justify-content: space-between;
-    }
+#timer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 100px;
+    text-align: center;
+}
 
+@media (max-width: 890px) {
     .hamburger {
         display: block;
+        order: 1;
     }
 
+    .score-board {
+        order: 2;
+        font-size: 0.85rem;
+    }
+
+    #timer {
+        order: 3;
+        font-size: 0.9rem;
+        min-width: 70px;
+        padding: 5px 10px;
+    }
+
+    /* Memasukkan tombol ke dalam menu vertikal */
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--dark);
-        padding: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-links a {
-        margin: 10px 0;
+    /* Styling tombol di dalam menu agar konsisten dengan link */
+    .nav-links button {
+        width: 100%;
+        margin: 5px 0;
+        text-align: left;
+        background: transparent;
+        color: white;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
@@ -267,52 +284,52 @@ button:hover {
     background: #3578c1;
     transform: translateY(-2px);
 }
-    .start-screen {
-        position: fixed;
-        inset: 0;
-        background: rgba(44, 62, 80, 0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3000;
-        padding: 20px;
-    }
 
-    .start-screen-content {
-        width: 100%;
-        max-width: 480px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.08);
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-    }
+.start-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(44, 62, 80, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+}
 
-    .start-screen h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #f1c40f;
-    }
+.start-screen-content {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-    .start-screen p {
-        color: #ecf0f1;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
+.start-screen h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f1c40f;
+}
 
-    .btn-start {
-        background-color: var(--primary);
-        color: white;
-        border-radius: 999px;
-        padding: 15px 30px;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.3s;
-    }
+.start-screen p {
+    color: #ecf0f1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
 
-    .btn-start:hover {
-        opacity: 0.85;
-    }
+.btn-start {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 999px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
 
+.btn-start:hover {
+    opacity: 0.85;
+}

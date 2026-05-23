@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-    // Score Board & Reset Button
+    // --- Bagian Score Board Tetap di Navbar ---
     const navbar = document.querySelector('.navbar');
     const scoreDisplay = document.createElement('div');
     scoreDisplay.className = "score-board";
