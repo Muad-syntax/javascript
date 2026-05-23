@@ -1,4 +1,4 @@
-let daftarJurusan = [
+ let daftarJurusan = [
     {
         nama : "RPL",
         kelas : ["RPL 1", "RPL 2"]
