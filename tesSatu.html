@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI || by Muad-syntax</title>
+    <style>
+        body{
+            background: #0b0482;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            text-align: center;
+            border: solid rgb(96, 95, 95) 3px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #fff;
+            color: #0b0482;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <label>Hitung BMI</label><br><br>
+        <input type="text" id="input-bb" placeholder="Berat Badan / kg"><br><br>
+        <input type="text" id="input-tb" placeholder="Tinggi Badan / m"><br><br>
+        <button id="btn-hitung" onclick="hitungBMI()">hitung</button>
+        <div class="box-info"><br>
+            <p id="hasil"></p>
+            <p id="keterangan"></p>
+        </div>
+    </div>
+
+    <script>
+        
+        let inputBb = document.getElementById("input-bb"); 
+        let inputTb = document.getElementById("input-tb");
+        let beratBadan;  
+        let tinggiBadan;
+
+        let hasil = document.getElementById("hasil")
+        let keterangan = document.getElementById("keterangan")
+
+        
+        function hitungBMI(){
+            // function for logic
+            beratBadan = parseFloat(inputBb.value.trim());
+            tinggiBadan = parseFloat(inputTb.value.trim());
+            let tinggiBadanPerMeter = tinggiBadan / 100;
+            let hitung = beratBadan / (tinggiBadanPerMeter**2);
+
+           if(hitung < 18.5){
+                keterangan.innerText = "Kurus";
+                keterangan.style.color = "#0b0482"
+            }else if (hitung >= 18.5 && hitung < 22.9) {
+                keterangan.innerText = "Ideal";
+                keterangan.style.color = "#0b0482"
+            }else if (hitung >= 23.0 && hitung < 24.9) {
+                keterangan.innerText = "Kelebihan Berat Badan";
+                keterangan.style.color = "#0b0482"
+            }else if (hitung >= 25.0 && hitung < 29.9) {
+                keterangan.innerText = "Obesitas Tingkat 1";
+                keterangan.style.color = "#0b0482"
+            }else if (hitung >= 30.0) {
+                keterangan.innerText = "Obesitas Tingkat 2";
+                keterangan.style.color = "#0b0482"
+            }
+            hasil.innerText = `Hasilnya: ${hitung.toFixed(2)}`
+        }
+
+    </script>
+</body>
+</html>
