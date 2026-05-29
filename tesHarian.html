@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Keliling Layang-layang</title>
+</head>
+<body>
+    
+    <div class="container">
+        <p>Rumus Keliling Layang-layang yaitu:</p>
+        <h4>K = 2 x (S1 + S2)</h4>
+
+        <p>
+            Dimana: <br>
+            K = Keliling <br>
+            S1 = Sisi 1 <br>
+            S2 = sisi 2
+        </p>
+
+        <label>Hitung Keliling Layang-layang</label><br>
+        <input type="text" id="nilaiS1" placeholder="nilai S1"><br>
+        <input type="text" id="nilaiS2" placeholder="nilai S2"><br><br>
+        <button id="btn-hitung" onclick="hitungLuasLayangLayang()">Hitung</button><br>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        let hasil = document.getElementById("hasil");
+        function hitungLuasLayangLayang(){
+            let nilaiS1 = parseInt(document.getElementById("nilaiS1").value.trim());
+            let nilaiS2 = parseInt(document.getElementById("nilaiS2").value.trim());
+            let hitung = 2 * (nilaiS1 + nilaiS2);
+
+            hasil.innerHTML = `
+            <p>
+                K = 2 x (S1 + S2)<br>
+                K = 2 x (${nilaiS1} + ${nilaiS2})<br>
+                K = ${hitung}
+            </p>
+            `
+        }
+
+    </script>
+
+</body>
+</html>
