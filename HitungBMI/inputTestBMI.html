@@ -52,37 +52,37 @@
         // fungsinya
         function hitungBMI(){
             // ambil atribut input
-            beratBadan = parseFloat(document.getElementById("berat-badan").value);
             tinggiBadan = parseFloat(document.getElementById("tinggi-badan").value);
-            gambar = document.getElementById("gambar")
-            let tinggiBadanPerMeter = tinggiBadan / 100
+            beratBadan = parseFloat(document.getElementById("berat-badan").value);
+            gambar = document.getElementById("gambar");
+            let tinggiBadanPerMeter = tinggiBadan / 100;
             let hitung = beratBadan / (tinggiBadanPerMeter**2);
 
             // perkondisian
             if(hitung < 18.5){
-                keterangan.innerText = "Kurus"
-                keterangan.style.color = "white"
-                gambar.src = "gambar/bbKurang.jpg"
+                keterangan.innerText = "Kurus";
+                keterangan.style.color = "white";
+                gambar.src = "gambar/bbKurang.jpg";
             }else if (hitung >= 18.5 && hitung < 22.9) {
-                keterangan.innerText = "Ideal"
-                keterangan.style.color = "green"
-                gambar.src = "gambar/ideal.jpg"
+                keterangan.innerText = "Ideal";
+                keterangan.style.color = "green";
+                gambar.src = "gambar/ideal.jpg";
             }else if (hitung >= 23.0 && hitung < 24.9) {
-                keterangan.innerText = "Dut"
-                keterangan.style.color = "orange"
-                gambar.src = "gambar/bbLebih.jpg"
+                keterangan.innerText = "Dut";
+                keterangan.style.color = "orange";
+                gambar.src = "gambar/bbLebih.jpg";
             }else if (hitung >= 25.0 && hitung < 29.9) {
-                keterangan.innerText = "Gendut"
-                keterangan.style.color = "yellow"
-                gambar.src = "gambar/obesitasT1.jpg"
+                keterangan.innerText = "Gendut";
+                keterangan.style.color = "yellow";
+                gambar.src = "gambar/obesitasT1.jpg";
             }else if (hitung >= 30.0) {
-                keterangan.innerText = "OMAGAAA 😶"
-                keterangan.style.color = "red"
-                gambar.src = "gambar/obesitasT2.jpg"
+                keterangan.innerText = "OMAGAAA 😶";
+                keterangan.style.color = "red";
+                gambar.src = "gambar/obesitasT2.jpg";
             }
 
             // munculkan hasilnya kedalam wadah
-            hasil.innerHTML = `<b>${hitung.toFixed(2)}</b>`
+            hasil.innerHTML = `<b>${hitung.toFixed(2)}</b>`;
         }
 
     </script>
