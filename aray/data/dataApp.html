@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adiwiyata</title>
+    <link rel="stylesheet" href="dataApp.css">
+</head>
+<body>
+    <!-- halaman login -->
+    <div id="halaman-login">
+        <h2>Adiwiyata - Login</h2>
+        <form id="form-login">
+            <div>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" placeholder="Masukan username..." required>
+            </div>
+            <div>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Masukan password..." required>
+            </div>
+            <button type="submit">Masuk</button>
+        </form>
+        <p>Belum punya akun? <a href="#halaman-register" id="ke-halaman-register">Daftar di sini</a></p>
+    </div>
+    
+    <!-- halaman register -->
+    <div id="halaman-register" style="display: none;">
+        <h2>Adiwiyata - Register</h2>
+        <form id="form-register">
+            <div>
+                <label for="reg-nama">Nama lengkap:</label>
+                <input type="text" id="reg-nama" placeholder="Nama lengkap..." required>
+            </div>
+            <div>
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" placeholder="Buat username..." required>
+            </div>
+            <div>
+                <label for="reg-password">Password:</label>
+                <input type="password" id="reg-password" placeholder="Buat password..." required>
+            </div>
+            <label for="reg-role">Daftar Sebagai:</label>
+            <select id="reg-role">
+                <option value="siswa">Siswa</option>
+                <option value="admin">Admin (Staff/Guru)</option>
+            </select>
+            <button type="submit">Daftar Akun</button>
+        </form>
+        <p>Sudah punya akun? <a href="#halaman-login" id="ke-halaman-login">Login di sini</a></p>
+    </div>
+
+    <!-- dashboard admin -->
+    <div id="dashboard-admin" style="display: none;">
+        <h2>Dashboard Admin</h2>
+        <p>Selamat datang, <span id="nama-admin">Admin</span>!</p>
+        <button class="tombol-logout">Keluar</button>
+        <hr>
+
+        <h3>Data Point Siswa</h3>
+        <form id="form-tambah-siswa">
+            <input type="text" id="admin-input-nama" placeholder="Nama Siswa Baru" required>
+            <input type="text" id="admin-input-username" placeholder="Username Siswa Baru" required>
+            <input type="password" id="admin-input-password" placeholder="Password Siswa Baru" required>
+            <button type="submit">Tambah Siswa</button>
+        </form>
+
+        <table border="1" cellpadding="5" style="margin-top: 10px; width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Username</th>
+                    <th>Poin</th>
+                    <th>Aksi Poin</th>
+                    <th>Pengaturan Akun</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-siswa"></tbody>
+        </table>
+        <hr>
+
+        <h3>Aturan Poin Adiwiyata</h3>
+        <form id="form-tambah-aturan">
+            <input type="text" id="aturan-nama" placeholder="Nama Aturan" required >
+            <input type="number" id="aturan-efek" placeholder="Efek Poin" required >
+            <button type="submit">Tambah Aturan</button>
+        </form>
+        <ul id="list-aturan-admin" style="margin-top: 10px"></ul>
+    </div>
+
+    <!-- dasboard siswa -->
+    <div id="dashboard-siswa" style="display: none;">
+        <h2>Dashboard Siswa</h2>
+        <p>Halo, <span id="nama-siswa-login">Siswa</span></p>
+        <h3>Poin Anda Saat Ini: <span id="point-siswa-login" style="font-size: 24px; font-weight: bold; color: green;">0</span></h3>
+        <button class="tombol-logout">Keluar</button>
+        <hr>
+
+        <h3>Riwayat Log Poin Anda</h3>
+        <table border="1" cellpadding="5" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                    <th>Alasan/Aturan</th>
+                    <th>Nominal</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-riwayat-siswa"></tbody>
+        </table>
+    </div>
+
+    <script src="dataApp.js"></script>
+</body>
+</html>

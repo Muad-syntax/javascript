@@ -1,0 +1,426 @@
+/* ==========================================================================
+   1. GOOGLE FONTS & VARIABLES (Tema Eco-Friendly Profesional)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #059669;
+    /* Hijau Emerald Adiwiyata */
+    --primary-hover: #047857;
+    /* Hijau Gelap untuk Hover */
+    --secondary-color: #3b82f6;
+    /* Biru Safir untuk Informasi/Aksi */
+    --bg-light: #f8fafc;
+    /* Background aplikasi (Slate halus) */
+    --surface-card: #ffffff;
+    /* Background Card/Konten */
+    --text-main: #1e293b;
+    /* Warna teks utama */
+    --text-muted: #64748b;
+    /* Warna teks sekunder/redup */
+    --danger-color: #ef4444;
+    /* Merah untuk Hapus/Pelanggaran */
+    --success-color: #10b981;
+    /* Hijau terang untuk Poin Positif */
+    --border-base: #e2e8f0;
+    /* Warna border standar */
+    --radius-md: 8px;
+    /* Kebulatan sudut standar */
+    --radius-lg: 12px;
+    /* Kebulatan sudut komponen besar */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Container Utama Otomatis Menyesuaikan Layar */
+#halaman-login,
+#halaman-register,
+#dashboard-admin,
+#dashboard-siswa {
+    background-color: var(--surface-card);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+        0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Animasi Transisi Halaman */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   3. STYLING HALAMAN OTENTIKASI (LOGIN & REGISTER)
+   ========================================================================== */
+#halaman-login,
+#halaman-register {
+    max-width: 450px;
+    margin: 60px auto;
+}
+
+h2 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+/* Form Layout */
+form {
+    margin-bottom: 20px;
+}
+
+form>div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+/* Input & Select Customization */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-base);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fafafa;
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.15);
+}
+
+/* Teks Bawah Form */
+p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+p a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. STYLING UTALITAS TOMBOL (BUTTONS)
+   ========================================================================== */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Tombol Utama (Submit) */
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Tombol Logout */
+.tombol-logout {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    float: right;
+    margin-top: -45px;
+    /* Menyejajarkan posisi dengan nama user */
+}
+
+.tombol-logout:hover {
+    background-color: #e2e8f0;
+    color: var(--danger-color);
+}
+
+/* Clear float untuk tata letak setelah logout */
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-base);
+    margin: 25px 0;
+    clear: both;
+}
+
+/* ==========================================================================
+   5. DASHBOARD LAYOUT (ADMIN & SISWA)
+   ========================================================================== */
+#dashboard-admin,
+#dashboard-siswa {
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+#dashboard-admin h2,
+#dashboard-siswa h2 {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#dashboard-admin>p,
+#dashboard-siswa>p {
+    text-align: left;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+#dashboard-admin h3,
+#dashboard-siswa h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #334155;
+}
+
+/* Inline Forms Pada Admin (Tambah Siswa & Aturan) */
+#form-tambah-siswa,
+#form-tambah-aturan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+#form-tambah-siswa input,
+#form-tambah-aturan input {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+}
+
+#form-tambah-siswa button,
+#form-tambah-aturan button {
+    width: auto;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   6. DATA PRESENTASI (TABEL DAN LIST)
+   ========================================================================== */
+/* Mengubah paksa tabel bawaan HTML menjadi modern */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: none !important;
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: block;
+    /* Membuat tabel bisa di-scroll secara horizontal di HP */
+    overflow-x: auto;
+}
+
+thead {
+    background-color: #f1f5f9;
+}
+
+th {
+    color: #475569;
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-base) !important;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+tr:last-child td {
+    border-bottom: none !important;
+}
+
+tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Tombol Aksi di Dalam Tabel */
+td button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+}
+
+td button:first-child {
+    background-color: #ecfdf5;
+    color: var(--primary-color);
+}
+
+td button:first-child:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+td button[onclick*="kurang"] {
+    background-color: #fff5f5;
+    color: var(--danger-color);
+}
+
+td button[onclick*="kurang"]:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+td button[onclick*="hapusSiswa"] {
+    background-color: transparent;
+    border: 1px solid #fee2e2;
+}
+
+td button[onclick*="hapusSiswa"]:hover {
+    background-color: var(--danger-color);
+    color: white !important;
+    border-color: var(--danger-color);
+}
+
+/* List Aturan Custom Admin */
+#list-aturan-admin {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#list-aturan-admin li {
+    background: #ffffff;
+    border: 1px solid var(--border-base);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 8px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+#list-aturan-admin li button {
+    background-color: transparent;
+    border: none;
+    padding: 4px 8px;
+}
+
+#list-aturan-admin li button:hover {
+    background-color: #fff5f5;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #halaman-login,
+    #halaman-register,
+    #dashboard-admin,
+    #dashboard-siswa {
+        padding: 20px 15px;
+    }
+
+    /* Penyesuaian logout di mobile layar kecil */
+    .tombol-logout {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+
+    #form-tambah-siswa,
+    #form-tambah-aturan {
+        flex-direction: column;
+    }
+
+    #form-tambah-siswa button,
+    #form-tambah-aturan button {
+        width: 100%;
+    }
+}   
