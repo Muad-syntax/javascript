@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Persegi</title>
+</head>
+
+<body>
+    <div class="container">
+        <label>Hitung Luas Persegi Panjang</label>
+        <br>
+        <input type="number" id="input-panjang" placeholder="panjang persegi">
+        <br>
+        <input type="number" id="input-lebar" placeholder="lebar persegi">
+        <br>
+        <button id="btn-result" onclick="hitungLuasPersegi()">Hitung</button>
+        <br>
+        <div id="result"></div>
+    </div>
+    <script>
+        let result = document.getElementById('result');
+
+        function hitungLuasPersegi(){
+            let panjang = document.getElementById('input-panjang').value;
+            let lebar = document.getElementById('input-lebar').value;
+            let hitung = panjang * lebar;
+
+            result.innerHTML = `<b>Luas Persegi = ${hitung}</b>`
+            console.log(typeof panjang)
+        }
+    </script>
+</body>
+
+</html>

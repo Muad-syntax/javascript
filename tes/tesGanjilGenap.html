@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Ganjil Genap</title>
+</head>
+
+<body>
+    <div class="container">
+        <label>Cek Ganjil Genap</label>
+        <br>
+        <input type="number" id="input-number">
+        <br>
+        <button id="btn-result">Cek</button>
+        <br>
+        <div id="result"></div>
+    </div>
+    <script>
+        let btnResult = document.getElementById("btn-result");
+        let result = document.getElementById("result")
+        function cekGanjilGenap() {
+            let inputNmbr = document.getElementById("input-number").value;
+            let cek = inputNmbr % 2;
+            if (cek === 0) {
+                result.innerHTML = `<b>${inputNmbr} Adalah bilangan Genap</b>`;
+            } else {
+                result.innerHTML = `<b>${inputNmbr} Adalah bilangan Ganjil</b>`;
+            }
+        }
+        btnResult.addEventListener('click', function () {
+            cekGanjilGenap();
+        })
+    </script>
+</body>
+
+</html>

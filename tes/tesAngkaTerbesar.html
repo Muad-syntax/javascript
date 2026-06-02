@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Nilai Terbesar | Array</title>
+</head>
+<body>
+    <p>
+        tekan tombo untuk mencari angka terbesar dari data: 12, 13, 8, 11, 19, 6, 27
+    </p>
+    <div id="result"></div>
+    <br>
+    <button id="btn-result">cari</button>
+    <script>
+        let result = document.getElementById('result');
+        let btnResult = document.getElementById('btn-result');
+        let dataAngka = [12, 13, 8, 11, 19, 6, 27];
+        
+        function cariAngkaTerbesar(kumpulanAngka){
+            let terbesar = kumpulanAngka[0];
+            for(let i = 1; i < kumpulanAngka.length; i++){
+                if(kumpulanAngka[i] > terbesar){
+                    terbesar = kumpulanAngka[i];
+                }
+            };
+            return terbesar;
+        }
+        
+        btnResult.addEventListener('click', function(){
+            let hasil = cariAngkaTerbesar(dataAngka);
+            result.innerHTML = `Angka Terbesar Adalah: ${hasil}`;
+        });
+        
+        </script>
+</body>
+</html>
