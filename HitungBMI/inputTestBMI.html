@@ -4,87 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-       body {
-            background: rgb(78, 78, 93);
-            color: white;
-            font-family: sans-serif;
-            text-align: center;
-            padding: 20px;
+    <link rel="stylesheet" href="styles/style.css">
+    <script>
+        // Mendefinisikan fungsi fallback gambar di awal (head) 
+        // agar siap dipanggil ketika elemen HTML gambar dimuat
+        function handleImageError(img) {
+            img.src = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop";
         }
-        #foto-bmi {
-            margin-top: 20px;
-            max-width: 200px;
-            border-radius: 10px;
-            display: none; /* Sembunyikan gambar sebelum dihitung */
-        }
-        .hasil-container {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        img{
-            max-width: 50%;
-        }
-    </style>
+    </script>
 </head>
 <body>
-    <!-- input -->
-    <label>Tinggi badan</label><br>
-    <input type="number" id="tinggi-badan" placeholder="cm"><br>
-    <label>Berat badan</label><br>
-    <input type="number" id="berat-badan" placeholder="kg"><br><br>
-    <button id="hitung" onclick="hitungBMI()">Hitung BMI</button>
+    <div class="app-container">
+        <header>
+            <h1>KALKULATOR BMI</h1>
+            <p>Periksa berat badan ideal Anda secara akurat</p>
+        </header>
 
-    <!-- wadah -->
-    <div id="hasil"></div>
-    <div id="keterangan"></div>
-    <img id="gambar" src="">
-    <script>
-        
-        // ambil atribut wadah
-        let hasil = document.getElementById("hasil")
-        let keterangan = document.getElementById("keterangan")
-        let beratBadan;
-        let tinggiBadan;
+        <!-- Form Input -->
+        <div class="input-group">
+            <label for="tinggi-badan">Tinggi Badan</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-ruler-vertical"></i>
+                <input type="number" id="tinggi-badan" placeholder="Contoh: 170" required>
+                <span class="input-unit">cm</span>
+            </div>
+        </div>
 
-        // fungsinya
-        function hitungBMI(){
-            // ambil atribut input
-            tinggiBadan = parseFloat(document.getElementById("tinggi-badan").value);
-            beratBadan = parseFloat(document.getElementById("berat-badan").value);
-            gambar = document.getElementById("gambar");
-            let tinggiBadanPerMeter = tinggiBadan / 100;
-            let hitung = beratBadan / (tinggiBadanPerMeter**2);
+        <div class="input-group">
+            <label for="berat-badan">Berat Badan</label>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-weight-scale"></i>
+                <input type="number" id="berat-badan" placeholder="Contoh: 60" required>
+                <span class="input-unit">kg</span>
+            </div>
+        </div>
 
-            // perkondisian
-            if(hitung < 18.5){
-                keterangan.innerText = "Kurus";
-                keterangan.style.color = "white";
-                gambar.src = "gambar/bbKurang.jpg";
-            }else if (hitung >= 18.5 && hitung < 22.9) {
-                keterangan.innerText = "Ideal";
-                keterangan.style.color = "green";
-                gambar.src = "gambar/ideal.jpg";
-            }else if (hitung >= 23.0 && hitung < 24.9) {
-                keterangan.innerText = "Dut";
-                keterangan.style.color = "orange";
-                gambar.src = "gambar/bbLebih.jpg";
-            }else if (hitung >= 25.0 && hitung < 29.9) {
-                keterangan.innerText = "Gendut";
-                keterangan.style.color = "yellow";
-                gambar.src = "gambar/obesitasT1.jpg";
-            }else if (hitung >= 30.0) {
-                keterangan.innerText = "OMAGAAA 😶";
-                keterangan.style.color = "red";
-                gambar.src = "gambar/obesitasT2.jpg";
-            }
+        <button id="hitung" onclick="hitungBMI()">
+            <i class="fa-solid fa-calculator"></i> Hitung BMI
+        </button>
 
-            // munculkan hasilnya kedalam wadah
-            hasil.innerHTML = `<b>${hitung.toFixed(2)}</b>`;
-        }
-
-    </script>
+        <!-- Wadah Hasil -->
+        <div class="result-card" id="result-card">
+            <p class="result-title">Skor BMI Anda</p>
+            <div id="hasil">0.00</div>
+            <div id="keterangan">-</div>
+            
+            <div class="image-container">
+                <!-- Menggunakan spacer transparan di awal agar tidak memicu error gambar rusak sebelum dihitung -->
+                <img id="gambar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Ilustrasi Status BMI" onerror="handleImageError(this)">
+            </div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

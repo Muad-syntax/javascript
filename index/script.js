@@ -24,6 +24,7 @@ element.style.transition = 'all 0.3s ease';
 element.addEventListener('mouseover', function() {
     element.style.color = 'green';
     element.style.backgroundColor = 'lightyellow';
+    element.style.cursor = 'pointer';
 });
 element.addEventListener('mouseout', function() {
     element.style.color = 'blue';

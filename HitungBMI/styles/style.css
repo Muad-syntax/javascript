@@ -1,0 +1,243 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            
+            /* Status Colors */
+            --color-kurus: #38bdf8;
+            --color-ideal: #4ade80;
+            --color-dut: #fb923c;
+            --color-gendut: #facc15;
+            --color-obes: #f87171;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* --- CONTAINER UTAMA --- */
+        .app-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 480px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #a5b4fc, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* --- FORM INPUT --- */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 16px;
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 14px 16px 14px 48px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 600;
+            outline: none;
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        /* Menghilangkan panah input number */
+        .input-wrapper input::-webkit-outer-spin-button,
+        .input-wrapper input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .input-unit {
+            position: absolute;
+            right: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        /* --- TOMBOL --- */
+        #hitung {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        #hitung:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+        }
+
+        #hitung:active {
+            transform: translateY(0);
+        }
+
+        /* --- AREA HASIL --- */
+        .result-card {
+            margin-top: 28px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 24px;
+            text-align: center;
+            display: none; /* Sembunyikan sebelum dihitung */
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .result-card.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result-title {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        #hasil {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #keterangan {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* --- ANIMASI & GAMBAR --- */
+        .image-container {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        #gambar {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Efek Getar Halus */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .getar {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .getarAtas {
+            animation: float 2s ease-in-out infinite;
+        }
