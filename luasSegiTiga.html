@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kisi Kisi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(4, 167, 255);
+        }
+
+        .container {
+            border: 2px solid rgb(0, 0, 115);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        #btn-hitung {
+            border: none;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #btn-hitung:hover {
+            cursor: pointer;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Hitung Luas Segitiga</h3>
+        <label>Alas</label><br>
+        <input type="number" id="input-alas"><br>
+        <label>Tinggi</label><br>
+        <input type="number" id="input-tinggi"><br>
+        <button id="btn-hitung" onclick="hitungLuasSegitiga()">hitung</button><br>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let hasil = document.getElementById("result");
+
+        function hitungLuasSegitiga() {
+            let alas = parseInt(document.getElementById('input-alas').value);
+            let tinggi = parseInt(document.getElementById('input-tinggi').value);
+            let luas = 0.5 * alas * tinggi;
+            hasil.innerHTML = `<p>Luas Segitiga: ${luas}</p>`;
+        }
+    </script>
+</body>
+
+</html>

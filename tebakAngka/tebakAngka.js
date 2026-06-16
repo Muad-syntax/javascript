@@ -1,23 +1,23 @@
 let angkaRandom = Math.floor(Math.random() * 100) + 1;
-let angka = document.getElementById("muncul-angka");
+const angka = document.getElementById("muncul-angka");
 angka.innerText = "?";
 
-let inputNumber = document.getElementById("input-number");
+const inputNumber = document.getElementById("input-number");
 
-let WadahBanyakNebak = document.getElementById("banyak-nebak");
-SisaSkorTebakan = 10;
+const WadahBanyakNebak = document.getElementById("banyak-nebak");
+let SisaSkorTebakan = 10;
 
-let btnTebak = document.getElementById("btn-tebak");
-let btnLanjut = document.getElementById("btn-lanjut");
-let btnReload = document.getElementById("btn-reload");
+const btnTebak = document.getElementById("btn-tebak");
+const btnLanjut = document.getElementById("btn-lanjut");
+const btnReload = document.getElementById("btn-reload");
 
-let audioGameOver = new Audio("../sound/gameOver.mp3")
-let audioBenar = new Audio("../sound/benar.mp3")
-let audioSalah = new Audio("../sound/salah.mp3")
+const audioGameOver = new Audio("../sound/gameOver.mp3")
+const audioBenar = new Audio("../sound/benar.mp3")
+const audioSalah = new Audio("../sound/salah.mp3")
 
 function tebakAngka() {
-    let status = document.getElementById("status");
-    let tebak = parseInt(inputNumber.value.trim());
+    const status = document.getElementById("status");
+    const tebak = parseInt(inputNumber.value.trim());
     angka.classList.remove("getar");
     void angka.offsetWidth;
     if (tebak === angkaRandom) {
@@ -47,7 +47,7 @@ function tebakAngka() {
 }
 WadahBanyakNebak.innerText = "Kesempatan Menebak: " + SisaSkorTebakan;
 function lanjutNebak() {
-    let status = document.getElementById("status");
+    const status = document.getElementById("status");
     angkaRandom = Math.floor(Math.random() * 100) + 1;
     inputNumber.value = "";
     angka.innerText = "?";
